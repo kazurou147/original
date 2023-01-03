@@ -1,0 +1,77 @@
+@use "../01_foundation/variable"as *;
+
+.c-post-list {
+    margin: 0px 0 0 0;
+    padding: 0;
+
+    &__item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 11px;
+        border-bottom: 1px solid $main-color;
+
+        &:first-child {
+            border-top: 1px solid $main-color;
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 300px;
+        padding: 15px 10px 0 10px;
+        letter-spacing: 0.14em;
+
+        @include sp {
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 0px 0px 0 0px;
+        }
+
+        time {
+            width: 156px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 1.2;
+            color: $main-color;
+
+            @include sp {
+                font-size: 1.6rem;
+            }
+        }
+
+        .post-categories {
+            width: 140px;
+
+            li {
+                a {
+                    padding: 5px 2px;
+                    color: #fff;
+                    background-color: #00d7ff;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                    line-height: 1;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &__link {
+        flex: 1;
+
+        @include sp {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        color: $main-color;
+    }
+
+
+}

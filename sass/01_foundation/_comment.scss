@@ -1,0 +1,12 @@
+// /* 
+// Theme Name: original
+// Theme URI: 
+// Version: 1.0
+//  */
+// 本来であればここに書くが一番最初に反映されない
+// 最初のコメントはelements.scssに書いている
+
+// 理由
+// フォント用のインポート（@import）がコメントよりも先に表示されていまう。
+// @importは最初に読み込まれるらしい。
+// そのため、elements.scssに書いた。
