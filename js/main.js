@@ -8,18 +8,18 @@ jQuery(function () {
 
 
 /* -------------------------
-ナビメニュー
+Navigation Menu
 ---------------------------- */
 window.addEventListener('DOMContentLoaded', function () {
 
     //ナビボタンエリアの取得
-    const navButton_wrap = document.getElementById('c-nav__button-wrap');
+    const navButton_wrap = document.getElementById('c-nav-button__wrap');
     //ナビボタンの取得
-    const navButton = document.querySelector('.c-nav__button');
+    const navButton = document.querySelector('.c-nav-button');
     //ナビメニューの取得
-    const navMenu = document.querySelector('.c-nav__sp');
-    //オーバーレイの取得
-    const navOverlay = document.getElementById('c-nav-overlay');
+    const navMenu = document.querySelector('.c-nav-sp');
+    //ナビメニューのリスト
+    const navItem = document.querySelectorAll('.c-nav-sp .menu > li > a');
 
     //ナビボタンをクリックしたら
     navButton_wrap.addEventListener('click', function () {
@@ -27,62 +27,58 @@ window.addEventListener('DOMContentLoaded', function () {
         navButton.classList.toggle('is-close');
         //ナビメニューの表示
         navMenu.classList.toggle('is-open');
-        //オーバーレイの表示
-        if (navOverlay) {
-            navOverlay.classList.toggle('is-open');
-        }
     });
 
-    //オーバーレイをクリックしたら
-    if (navOverlay) {
-        navOverlay.addEventListener('click', function () {
+    // ページ内リンクの場合
+    navItem.forEach(el => {
+        // ナビメニューのリスト
+        el.addEventListener('click', function () {
             //ナビボタンの変更
-            navButton.classList.remove('is-close');
+            navButton.classList.toggle('is-close');
             //ナビメニューの表示
-            navMenu.classList.remove('is-open');
-            //オーバーレイの表示
-            navOverlay.classList.remove('is-open');
-
+            navMenu.classList.toggle('is-open');
         });
-    }
+    });
 
 });
 
 
 /* -------------------------
-ナビ　サブメニュー
+Navigation Sub Menu
 ---------------------------- */
-//初回の判定　class="sub-menu-sp-btn"の複数入力を防ぐため
-var firstTime = true;
+//初回の判定 class="sub-menu-sp-btn"の複数入力を防ぐため
+let firstTime = true;
 
-//グローバルナビゲーション
-jQuery(window).on('load resize', function () {
-    function navMenu() {
-        //windowの幅を取得
-        var winwidth = jQuery(window).width();
-        //判定
+function navMenu() {
+    //windowの幅を取得
+    let winwidth = jQuery(window).width();
+    const breakPoint = 768;
+    const menuItem_children = jQuery('.menu-item-has-children');
 
-        //ナビメニューのホバー
-        if (winwidth > 1050) {
-            jQuery('.menu-item-has-children').on({
-                'mouseenter': function () {
-                    jQuery(this).children('.sub-menu').addClass('is-open');
-                },
-                'mouseleave': function () {
-                    jQuery(this).children('.sub-menu').removeClass('is-open');
-                }
-            });
+    //ナビメニューのホバー
+    if (winwidth >= breakPoint) {
+        menuItem_children.on({
+            'mouseenter': function () {
+                jQuery(this).children('.sub-menu').addClass('is-open');
+            },
+            'mouseleave': function () {
+                jQuery(this).children('.sub-menu').removeClass('is-open');
+            }
+        });
 
-        } else if (winwidth < 1051 && firstTime == true) {
+    } else if (winwidth < breakPoint && firstTime == true) {
 
-            //ナビの子メニュー（アコーディオン）
-            jQuery('.menu-item-has-children').append('<div class="sub-menu-sp-btn"></div>');
-            jQuery('.sub-menu-sp-btn').on('click touch', function () {
-                jQuery(this).prev().slideToggle();
-            });
-            firstTime = false;
-        }
+        //ナビの子メニュー（アコーディオン）
+        menuItem_children.append('<div class="sub-menu-sp-btn"></div>');
+        jQuery('.sub-menu-sp-btn').on('click touch', function () {
+            jQuery(this).prev().slideToggle();
+            jQuery(this).toggleClass('is-open');
+        });
+        firstTime = false;
     }
+}
+
+jQuery(window).on('load resize', function () {
     navMenu();
 });
 

@@ -1,17 +1,11 @@
-/*Variable
-－－－－－－－*/
-
-
-/*
-ブレークポイント
-*/
-
+// --------------------------
+// Variable
+// --------------------------- 
 $break-pc: 1200px;
-$break-tb: 1050px;
+$break-tb: 1049px;
 $break-sp: 767px;
-$break-w800: 840px;
-$break-w1200: 1200px;
-$break-header: 1150px;
+$break-xs: 375px;
+$break-header: 1300px;
 
 @mixin pc {
     @media screen and (max-width: ($break-pc)) {
@@ -31,14 +25,8 @@ $break-header: 1150px;
     }
 }
 
-@mixin w800 {
-    @media screen and (max-width: ($break-w800)) {
-        @content;
-    }
-}
-
-@mixin w1200 {
-    @media screen and (max-width: ($break-w1200)) {
+@mixin xs {
+    @media screen and (max-width: ($break-xs)) {
         @content;
     }
 }
@@ -49,5 +37,15 @@ $break-header: 1150px;
     }
 }
 
-$main-color: #32a3e0;
-$gray: #ddd;
+// Color 
+$main-color: #cb9c00;
+$bg-color: #fef7f1;
+
+// Img
+$sitePath: "./img/";
+
+// Font 
+// 部分的に使われるフォント
+$font: "Noto Sans JP",
+"Arial",
+sans-serif

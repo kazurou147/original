@@ -7,7 +7,7 @@ function theme_name_files()
 
   //jQuery読み込み
   wp_enqueue_script('jquery');
-  //js読み込み
+  //自作js読み込み
   wp_enqueue_script('main', get_theme_file_uri('/js/main.js'), [], '', true);
   //高さを揃える
   wp_enqueue_script('matchHeight', get_theme_file_uri('/js/jquery.matchHeight.js'), [], '', true);
@@ -37,8 +37,10 @@ add_theme_support('html5', array('search-form'));
 
 //アイキャッチ画像
 add_theme_support('post-thumbnails');
+
 //画像のサイズ プロジェクトによって適当に数値を変えること
-//add_image_size('thumb750', 750, 500, true);
+// ブログ記事一覧の画像サイズ 画像サイズは適時変更すること
+add_image_size('thumb01', 800, 600, true);
 
 
 //カスタムナビメニュー
@@ -68,8 +70,29 @@ function my_more($more)
 add_filter('excerpt_more', 'my_more');
 
 
+// スマホ、タブレット判定
+function is_mobile() {
+  $useragents = array(
+      'iPhone',          // iPhone
+      'iPod',            // iPod touch
+      '^(?=.*Android)(?=.*Mobile)', // 1.5+ Android
+      'dream',           // Pre 1.5 Android
+      'CUPCAKE',         // 1.5+ Android
+      'blackberry9500',  // Storm
+      'blackberry9530',  // Storm
+      'blackberry9520',  // Storm v2
+      'blackberry9550',  // Storm v2
+      'blackberry9800',  // Torch
+      'webOS',           // Palm Pre Experimental
+      'incognito',       // Other iPhone browser
+      'webmate'          // Other iPhone browser
+  );
+  $pattern = '/'.implode('|', $useragents).'/i';
+  return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
+}
 
-//body_classにページスラッグ名を含ませたりオリジナルのclassを追加&タブレットとスマホの場合のクラスも追加
+// body_classにページスラッグ名を含ませたりオリジナルのclassを追加
+// タブレットとスマホの場合のクラスも追加
 function pagename_class($classes = '')
 {
   if (is_page()) { //slugを追加
@@ -88,13 +111,30 @@ function pagename_class($classes = '')
 add_filter('body_class', 'pagename_class');
 
 
+// 記事内の１番目の画像をアイキャッチ代わりにする
+function catch_that_image()
+{
+  global $post;
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  $first_img = $matches[1][0];
+
+  if (empty($first_img)) { //Defines a default image
+    $first_img = esc_url(get_template_directory_uri()) . "/img/no-image.png";
+  }
+  return $first_img;
+}
+
+
 
 //「投稿」の名前を変更
 function Change_menulabel()
 {
   global $menu;
   global $submenu;
-  $name = 'トピックス';
+  $name = 'ブログ';
   $menu[5][0] = $name;
   $submenu['edit.php'][5][0] = $name . '一覧';
   $submenu['edit.php'][10][0] = '新しい' . $name;
@@ -102,7 +142,7 @@ function Change_menulabel()
 function Change_objectlabel()
 {
   global $wp_post_types;
-  $name = 'トピックス';
+  $name = 'ブログ';
   $labels = &$wp_post_types['post']->labels;
   $labels->name = $name;
   $labels->singular_name = $name;
@@ -163,9 +203,23 @@ add_filter('tiny_mce_before_init', 'custom_tiny_mce_formats');
 
 
 //エディタのビジュアル/テキスト切替でコード消滅を防止（自動整形無効化）
-function my_tiny_mce_before_init( $init_array ) {
-  $init_array['valid_elements']          = '*[*]';
-  $init_array['extended_valid_elements'] = '*[*]';
-  return $init_array;
+//function my_tiny_mce_before_init( $init_array ) {
+//  $init_array['valid_elements']          = '*[*]';
+//  $init_array['extended_valid_elements'] = '*[*]';
+//  return $init_array;
+//}
+//add_filter( 'tiny_mce_before_init' , 'my_tiny_mce_before_init' );
+
+
+// 固定ページのみビジュアルエディタを無効化
+function disable_visual_editor_in_page() {
+	global $typenow;
+	if( $typenow == 'page' ){
+		add_filter('user_can_richedit', 'disable_visual_editor_filter');
+	}
 }
-add_filter( 'tiny_mce_before_init' , 'my_tiny_mce_before_init' );
+function disable_visual_editor_filter(){
+	return false;
+}
+add_action('load-post.php', 'disable_visual_editor_in_page');
+add_action('load-post-new.php', 'disable_visual_editor_in_page');

@@ -4,7 +4,7 @@
 <div class="c-kv">
   <div class="l-container">
     <h1 class="c-kv__title">
-      <?php echo esc_html(get_the_title($ID)); ?>
+      ニュース
     </h1>
   </div>
 </div>

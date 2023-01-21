@@ -63,28 +63,26 @@
 
 
             <!-- SP Menu Button -->
-            <div class="c-nav__button-wrap" id="c-nav__button-wrap">
-              <button class="c-nav__button js-toggle-button">
+            <div class="c-nav-button__wrap" id="c-nav-button__wrap">
+              <button class="c-nav-button js-toggle-button">
                 <span></span>
                 <span></span>
                 <span></span>
               </button>
-              <div class="c-nav__button-text">MENU</div>
+              <div class="c-nav-button__text">Menu</div>
             </div>
             <!-- /SP Menu Button -->
 
             <!-- SP Menu -->
-            <div class="c-nav__sp">
-              <nav>
-                <?php if (has_nav_menu('navigation')) : ?>
-                <?php wp_nav_menu(array(
+            <nav class="c-nav-sp">
+              <?php if (has_nav_menu('navigation')) : ?>
+              <?php wp_nav_menu(array(
                   'theme_location' => 'navigation'
                 ));
                 ?>
-                <?php endif; ?>
-              </nav>
+              <?php endif; ?>
+            </nav>
 
-            </div>
             <!-- /SP Menu -->
 
 

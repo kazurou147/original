@@ -25,6 +25,7 @@ Version: 1.0
 
 
 body {
+    height: 100%;
     color: #000;
     font-family: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     font-size: 16px;
@@ -87,6 +88,10 @@ ul {
 ol {
     padding: 0 0 0 20px;
     box-sizing: border-box;
+}
+
+nav ul {
+    list-style: none;
 }
 
 table {

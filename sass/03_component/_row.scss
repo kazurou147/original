@@ -1,0 +1,55 @@
+@use "../01_foundation/variable"as *;
+
+
+.c-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.c-row-center {
+  justify-content: center;
+}
+
+.c-row-between {
+  justify-content: space-between;
+}
+
+.c-row-wrap {
+  flex-wrap: wrap;
+}
+
+.c-col-2 {
+  // widthは適時変更すること
+  width: 48%;
+  max-width: 48%;
+  margin: 0 4% 30px 0;
+  background-color: #ddd;
+
+  @include sp {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 30px 0;
+  }
+
+  &:nth-child(2n) {
+    margin: 0 0 30px 0;
+  }
+}
+
+.c-col-3 {
+  // widthは適時変更すること
+  width: 32%;
+  max-width: 32%;
+  margin: 0 2% 30px 0;
+  background-color: #ddd;
+
+  @include sp {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 30px 0;
+  }
+
+  &:nth-child(3n) {
+    margin: 0 0 30px 0;
+  }
+}

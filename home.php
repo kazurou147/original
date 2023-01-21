@@ -1,66 +1,45 @@
 <?php get_header(); ?>
 
 
+<main class="l-site__main l-blog__main">
 
-<div class="l-site__content">
-  <!-- サイトコンテンツ -->
+  <!-- キービジュアル -->
+  <?php get_template_part('template/page', 'kv'); ?>
 
-  <main class="l-site__main l-blog__main">
+  <!-- パンくずリスト -->
+  <?php get_template_part('template/page', 'breadcrumb'); ?>
 
+  <!--　コンテンツ全体　-->
+  <div class="l-container">
 
-    <!-- キービジュアル -->
-    <?php get_template_part('template/page', 'kv'); ?>
+    <!-- 2カラム -->
+    <div class="l-blog__content">
 
-    <!-- パンくずリスト -->
-    <div class="l-breadcrumps">
-      <div class="l-container">
-        <div class="c-breadcrumbs">
-          <?php if (function_exists('bcn_display')) {
-            bcn_display();
-          } ?>
-        </div>
-      </div>
-    </div>
+      <!-- コンテンツ -->
+      <div class="l-blog__post">
 
+        <div class="c-post-news-list">
 
+          <article <?php post_class(); ?>>
 
-    <!--　コンテンツ全体　-->
-    <div class="l-blog__content-outer">
-      <div class="l-container">
-
-        <!-- 2カラム -->
-        <div class="l-blog__cotent">
-
-
-          <!-- コンテンツ -->
-          <div class="l-blog__post">
-
-            <div class="l-post-list">
-
-              <!-- 記事 -->
-
-              <article <?php post_class(); ?>>
-
-                <h2>ニュース</h2>
-
-                <?php if (have_posts()) :
+            <?php if (have_posts()) :
                   while (have_posts()) : the_post(); ?>
 
+            <!-- コンテンツ  -->
+            <!-- 
+              画像なし post-news-list
+            画像あり post-blog-list
+            -->
+            <?php get_template_part('template/post', 'news-list'); ?>
 
-                <!-- コンテンツ  -->
-
-
-                <?php get_template_part('template/post', 'list'); ?>
-
-
-                <?php endwhile;
+            <?php endwhile;
                 endif; ?>
 
-                <!-- pagenation -->
-                <?php if (paginate_links()) : //ページが1ページ以上あれば以下を表示 
+            <!-- pagenation -->
+            <?php if (paginate_links()) : //ページが1ページ以上あれば以下を表示 
                 ?>
-                <div class="l-blog-pagenation">
-                  <?php
+            <div class="l-blog-pagenation">
+              <?php
                     echo
                     paginate_links(
                       array(
@@ -72,35 +51,24 @@
                       )
                     );
                     ?>
-                </div><!-- /pagenation -->
-                <?php endif; ?>
+            </div><!-- /pagenation -->
+            <?php endif; ?>
 
-              </article>
+          </article>
 
-            </div><!-- /l-post-list -->
+        </div><!-- /l-post-list -->
 
+      </div><!-- /l-blog__post -->
 
-          </div><!-- /l-blog__post -->
+      <!-- サイドバー -->
+      <div class="l-sidebar">
+        <?php get_sidebar(); ?>
+      </div>
 
+    </div><!-- /l-blog__content -->
 
-          <!-- サイドバー -->
-          <div class="l-sidebar">
-            <?php get_sidebar(); ?>
-          </div>
+  </div><!-- /l-container -->
 
-
-        </div><!-- /l-blog__cotent -->
-
-      </div><!-- /l-container -->
-
-    </div><!-- /l-blog-content__outer -->
-
-
-  </main> <!--  /l-site__main -->
-
-
-</div><!-- /l-site__content -->
-
-
+</main> <!--  /l-site__main -->
 
 <?php get_footer(); ?>
