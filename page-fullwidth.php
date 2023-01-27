@@ -1,3 +1,9 @@
+<?php 
+/*
+Template Name: fullwidth
+*/
+?>
+
 <?php get_header(); ?>
 
 <?php remove_filter('the_content', 'wpautop'); ?>
@@ -18,23 +24,18 @@
 
     <!--　コンテンツ全体　-->
     <div class="l-page__content-outer">
-      <div class="l-container">
 
-
-        <!-- 記事 -->
-
-        <article <?php post_class(); ?>>
-          <?php if (have_posts()) :
+      <!-- 記事 -->
+      <article <?php post_class(); ?>>
+        <?php if (have_posts()) :
             while (have_posts()) : the_post(); ?>
 
-          <?php the_content();  ?>
+        <?php the_content();  ?>
 
-          <?php endwhile;
+        <?php endwhile;
           endif; ?>
-        </article>
+      </article>
 
-
-      </div><!-- /l-container -->
 
     </div><!-- /l-page-content-outer -->
 

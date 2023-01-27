@@ -203,12 +203,12 @@ add_filter('tiny_mce_before_init', 'custom_tiny_mce_formats');
 
 
 //エディタのビジュアル/テキスト切替でコード消滅を防止（自動整形無効化）
-//function my_tiny_mce_before_init( $init_array ) {
+// function my_tiny_mce_before_init( $init_array ) {
 //  $init_array['valid_elements']          = '*[*]';
 //  $init_array['extended_valid_elements'] = '*[*]';
 //  return $init_array;
-//}
-//add_filter( 'tiny_mce_before_init' , 'my_tiny_mce_before_init' );
+// }
+// add_filter( 'tiny_mce_before_init' , 'my_tiny_mce_before_init' );
 
 
 // 固定ページのみビジュアルエディタを無効化

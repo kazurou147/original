@@ -15,7 +15,7 @@ if (!is_front_page()) : ?>
     <div class="l-footer">
       <div class="l-footer__left">
         <h2 class="l-footer__brand">
-          <a href="/"><img src="./img/logo_footer.png" alt="" width=""></a>
+          <a href="/"><img src='<?php echo esc_url(get_template_directory_uri()); ?>/img/logo_footer.png' alt=''></a>
         </h2>
 
         <div class="l-footer__info">

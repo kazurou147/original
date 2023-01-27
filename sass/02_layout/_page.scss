@@ -1,6 +1,11 @@
 @use "../01_foundation/variable"as *;
 
 /* page */
+.l-page {
+  &__content-outer {
+    margin-bottom: 50px;
+  }
+}
 
 
 /* キービジュアル */

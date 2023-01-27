@@ -7,7 +7,7 @@
   <?php get_template_part('template/page', 'kv'); ?>
 
   <!-- パンくずリスト -->
-  <?php get_template_part('template/page', 'breadcrumb'); ?>
+  <?php get_template_part('template/page', 'breadcrumbs'); ?>
 
   <!--　コンテンツ全体　-->
   <div class="l-container">
