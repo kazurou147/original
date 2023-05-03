@@ -1,6 +1,6 @@
 /* 
-Theme Name: original
-Theme URI: 
+Theme Name: tokyo-hart
+Theme URI: http://www.tokyo-hart.jp/
 Version: 1.0
  */
 @use "../01_foundation/variable"as *;
@@ -10,10 +10,17 @@ Version: 1.0
 // ゴシック体
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
 
+// font-family: 'Shippori Mincho', serif;
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap');
+
+// font-family: 'Akshar', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@400;500;600;700&display=swap');
+
+
 // 明朝体 
 // @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700;900&display=swap');
 
-// font-family: 'Noto Serif JP', "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", serif;
+// font-family: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 
 
 
@@ -27,9 +34,9 @@ Version: 1.0
 body {
     height: 100%;
     color: #000;
-    font-family: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-family: 'Shippori Mincho', "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", serif;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 2.18;
     overflow-x: hidden;
 }
 
@@ -95,6 +102,7 @@ nav ul {
 }
 
 table {
+    border-collapse: collapse;
     margin-bottom: 20px;
 
     th {

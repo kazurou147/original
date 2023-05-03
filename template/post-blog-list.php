@@ -22,8 +22,12 @@
 
     <div class="c-post-blog-list__title">
       <a href="<?php the_permalink(); ?>">
-        <?php is_mobile() ? wp_trim_words(the_title(), 50, '...') : wp_trim_words(the_title(), 100, '...'); ?>
+        <?php the_title(); ?>
       </a>
+    </div>
+
+    <div class="c-post-blog-list__desc">
+      <?php the_excerpt(); ?>
     </div>
 
   </div>

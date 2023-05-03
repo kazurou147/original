@@ -9,6 +9,7 @@ jQuery(function () {
 
 /* -------------------------
 Navigation Menu
+ハンバーガーメニュー
 ---------------------------- */
 window.addEventListener('DOMContentLoaded', function () {
 
@@ -53,7 +54,7 @@ function navMenu() {
     //windowの幅を取得
     let winwidth = jQuery(window).width();
     const breakPoint = 768;
-    const menuItem_children = jQuery('.menu-item-has-children');
+    const menuItem_children = jQuery('#menu-header-nav .menu-item-has-children');
 
     //ナビメニューのホバー
     if (winwidth >= breakPoint) {
@@ -83,6 +84,27 @@ jQuery(window).on('load resize', function () {
 });
 
 
+/* -------------------------
+Navigation Menu 2
+ハンバーガーメニュー
+---------------------------- */
+jQuery(function ($) {
+    function gMenu() {
+        // 子メニュー
+        const menuItem_children = $('#menu-smartphone-nav .menu-item-has-children a');
+
+        menuItem_children.on('hover', function (e) {
+            // e.target.preventDefault();
+            console.log('OK');
+            $(this).next().slideToggle();
+        });
+
+    };
+
+    jQuery(window).on('load resize', function () {
+        gMenu();
+    });
+});
 
 
 /* -------------------------
@@ -170,4 +192,46 @@ anchorArray.forEach(function (link) {
             behavior: "smooth"
         });
     })
+});
+
+
+/* -------------------------
+Vegas
+---------------------------- */
+jQuery(function ($) {
+    // $('.p-front-mv').vegas({
+    // slides: [
+    // { src: 'http://tokyohart.local/wp-content/themes/tokyo-hart/img/banner_mv01.jpg' },
+    // { src: 'http://tokyohart.local/wp-content/themes/tokyo-hart/img/banner_mv02.jpg' },
+    // { src: 'http://tokyohart.local/wp-content/themes/tokyo-hart/img/banner_mv03.jpg' }
+    // ],
+    // delay: 8000,
+    // transitionDuration: 3000,
+    // transition:'blur',
+    // animation:'kenburns'
+    // });
+});
+
+
+/* -------------------------
+Slick
+---------------------------- */
+jQuery(function ($) {
+    $('.p-front-facility-block01').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        centerMode: true,
+        variableWidth: true,
+        arrows: false,
+        // responsive: [
+        //     {
+        //       breakpoint: 767, // 399px以下のサイズに適用
+        //       settings: {
+        //       slidesToShow: 3,
+        //       },
+        //     },
+        //   ],
+    });
 });

@@ -4,58 +4,121 @@
 .c-btn01 {
   display: inline-block;
   position: relative;
-  width: 280px;
+  width: auto;
   max-width: 100%;
-  padding: 0.5em;
-  border: 1px solid $main-color;
+  padding: 1em 4em 1em 2em;
   color: #fff;
+  background: url($sitePath + "icon_arrow-white.png") no-repeat calc(100% - 20px) 44%;
+  background-size: 20px auto;
   background-color: $main-color;
   transition: all 0.2s;
   box-sizing: border-box;
   font-weight: bold;
-  letter-spacing: 0.2em;
-  font-size: 18px;
+  letter-spacing: 0.1em;
+  font-size: 14px;
   line-height: 1.4;
   text-align: center;
   text-decoration: none !important;
 
   @include sp {
-    width: 230px;
-    max-width: 100%;
-    padding: 5px 10px 5px 10px;
-    font-size: 14px;
-    box-sizing: unset;
+    font-weight: 400;
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
-    top: calc(50% - 5px);
-    right: 20px;
-    width: 10px;
-    height: 10px;
-    border-top: 2px solid #fff;
-    border-right: 2px solid #fff;
-    transform: rotate(45deg);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
 
-    @include sp {
-      top: calc(50% - 3.5px);
-      right: 20px;
-      width: 7px;
-      height: 7px;
+  &:hover {
+    opacity: 1;
+
+    &::after {
+      opacity: 0.5;
     }
   }
 
 
+
+  &--large {
+    font-size: 15px;
+    padding: 1em 6em 1em 6em;
+
+    @include sp {
+      width: 450px;
+      max-width: 100%;
+      padding: 1em 0.5em 2.5em 0.5em;
+
+      &::before {
+        top: auto;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+      }
+
+      &::after {
+        top: auto;
+        bottom: 22px;
+        left: 0;
+        right: 0;
+        transform: translateX(6px) rotate(45deg);
+      }
+    }
+  }
+}
+
+.c-btn-radius {
+  display: block;
+  position: relative;
+  width: 180px;
+  max-width: 100%;
+  padding: 11px 10px 12px;
+  // border: 1px solid $main-color;
+  border-radius: 50px;
+  color: #fff;
+  background-color: $main-color;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-size: 15px;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none !important;
+
+  @include header {
+    width: 130px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #fff;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
   &:hover {
-    border: 1px solid $main-color;
-    color: $main-color;
-    background-color: transparent;
-    text-decoration: none;
+    opacity: 1;
 
     &::after {
-      border-top: 2px solid $main-color;
-      border-right: 2px solid $main-color;
+      opacity: 0.5;
     }
+  }
+
+
+  img {
+    margin-right: 8px;
   }
 }

@@ -12,35 +12,37 @@
 
     @include tb {
         width: 100%;
-        padding: 0 15px;
+        padding: 0 20px;
     }
 }
-
-
-/*　ヘッダー用　*/
-
-.l-container--header {
-    width: 1260px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 30px;
-
-    @include tb {
-        width: 100%;
-        padding: 0 15px;
-    }
-}
-
 
 /* 小さい幅 */
 .l-container-small {
-    width: 900px;
+    width: 1120px;
     max-width: 100%;
     margin: 0 auto;
     padding: 0 30px;
 
     @include tb {
         width: 100%;
-        padding: 0 15px;
+        padding: 0 20px;
+    }
+}
+
+/* ヘッダー用 */
+.l-container-header {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* SP&paddingなし */
+.l-container-sp-padding {
+    @include sp {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0;
     }
 }

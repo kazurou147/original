@@ -5,13 +5,14 @@
 /* Header */
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
-    height: 120px;
-    margin: 0 auto;
+    width: 100%;
+    height: 85px;
+    margin: auto;
     padding: 0px;
-    background-color: #fff;
+    // background-color: #fff;
     z-index: 777;
 
     @include sp {
@@ -33,22 +34,30 @@ header {
     justify-content: space-between;
 
     &__left {
-        width: 200px;
-        margin: 8px 10px 0 0;
-
-        @include sp {
-            margin: 3px 10px 0 0;
-            width: 70px;
-        }
+        display: flex;
+        width: 340px;
+        margin: 0px 0px 0 0;
     }
 
+
     &__branding {
-        width: 200px;
-        margin: 0px 0px 0 0px;
+        margin: 11px 10px 0 0px;
         padding: 0px 0;
 
-        >a>img {
-            width: 100%;
+        @include sp {
+            margin: 14px 10px 0 0px;
+        }
+
+        >a {
+            &:hover {
+                opacity: 1;
+            }
+
+            @include sp {
+                img {
+                    width: 189px;
+                }
+            }
         }
     }
 
@@ -56,13 +65,11 @@ header {
         flex: 1;
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         padding: 0 0 0px 0;
 
-        @include sp {
-            flex-wrap: wrap;
-            width: 80px;
-            margin: 0 0px 0 0;
-            padding: 0;
+        @include pc {
+            display: none;
         }
     }
 }
@@ -73,18 +80,25 @@ header {
 
 /* Navi */
 
-.l-nav__wrap {
+.l-nav {
     display: flex;
     align-items: flex-end;
     //justify-content: space-between;
     margin: 0;
-    padding: 40px 20px 0 40px;
+    padding: 0px 0px 0 0px;
 
-    @include header {
-        padding: 40px 10px 0 10px;
-    }
 
     @include sp {
         display: none;
+    }
+}
+
+.l-header-button {
+    display: flex;
+    align-items: center;
+    margin-left: 17px;
+
+    &__item {
+        margin-right: 10px;
     }
 }

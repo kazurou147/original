@@ -4,6 +4,10 @@ function theme_name_files()
 {
   //CSS読み込み id="main-style-css"
   wp_enqueue_style('main-style', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
+  //vegas slider
+  wp_enqueue_style('vegas', get_theme_file_uri('/css/vegas.min.css'), [], '', false);
+  //slick
+  wp_enqueue_style('slick', get_theme_file_uri('/css/slick.css'), [], '', false);
 
   //jQuery読み込み
   wp_enqueue_script('jquery');
@@ -11,6 +15,10 @@ function theme_name_files()
   wp_enqueue_script('main', get_theme_file_uri('/js/main.js'), [], '', true);
   //高さを揃える
   wp_enqueue_script('matchHeight', get_theme_file_uri('/js/jquery.matchHeight.js'), [], '', true);
+  //vegas slider
+  wp_enqueue_script('vegas', get_theme_file_uri('/js/vegas.min.js'), [], '', true);
+  //slick
+  wp_enqueue_script('slick', get_theme_file_uri('/js/slick.min.js'), [], '', true);
 }
 add_action('wp_enqueue_scripts', 'theme_name_files');
 
@@ -52,12 +60,15 @@ register_nav_menu('navigation_sp', 'スマホ用ナビゲーションメニュ�
 register_nav_menu('footer-menu1', 'フッターメニュー1');
 register_nav_menu('footer-menu2', 'フッターメニュー2');
 register_nav_menu('footer-menu3', 'フッターメニュー3');
+register_nav_menu('footer-menu4', 'フッターメニュー4');
+register_nav_menu('footer-menu5', 'フッターメニュー5');
+register_nav_menu('footer-menu6', 'フッターメニュー6');
 
 
 //記事抜粋の文字数
 function my_length($length)
 {
-  return 50;
+  return (wp_is_mobile()) ? 30 : 50;
 }
 add_filter('excerpt_mblength', 'my_length');
 
@@ -65,29 +76,31 @@ add_filter('excerpt_mblength', 'my_length');
 //記事抜粋の省略記号
 function my_more($more)
 {
-  return '<span class="l-excerpt-more"></span>';
+  $more = '<a href="' . esc_url(get_permalink()) . '">[詳しく見る]';
+  return $more;
 }
 add_filter('excerpt_more', 'my_more');
 
 
 // スマホ、タブレット判定
-function is_mobile() {
+function is_mobile()
+{
   $useragents = array(
-      'iPhone',          // iPhone
-      'iPod',            // iPod touch
-      '^(?=.*Android)(?=.*Mobile)', // 1.5+ Android
-      'dream',           // Pre 1.5 Android
-      'CUPCAKE',         // 1.5+ Android
-      'blackberry9500',  // Storm
-      'blackberry9530',  // Storm
-      'blackberry9520',  // Storm v2
-      'blackberry9550',  // Storm v2
-      'blackberry9800',  // Torch
-      'webOS',           // Palm Pre Experimental
-      'incognito',       // Other iPhone browser
-      'webmate'          // Other iPhone browser
+    'iPhone',          // iPhone
+    'iPod',            // iPod touch
+    '^(?=.*Android)(?=.*Mobile)', // 1.5+ Android
+    'dream',           // Pre 1.5 Android
+    'CUPCAKE',         // 1.5+ Android
+    'blackberry9500',  // Storm
+    'blackberry9530',  // Storm
+    'blackberry9520',  // Storm v2
+    'blackberry9550',  // Storm v2
+    'blackberry9800',  // Torch
+    'webOS',           // Palm Pre Experimental
+    'incognito',       // Other iPhone browser
+    'webmate'          // Other iPhone browser
   );
-  $pattern = '/'.implode('|', $useragents).'/i';
+  $pattern = '/' . implode('|', $useragents) . '/i';
   return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
 }
 
@@ -134,7 +147,7 @@ function Change_menulabel()
 {
   global $menu;
   global $submenu;
-  $name = 'ブログ';
+  $name = 'トピックス';
   $menu[5][0] = $name;
   $submenu['edit.php'][5][0] = $name . '一覧';
   $submenu['edit.php'][10][0] = '新しい' . $name;
@@ -142,7 +155,7 @@ function Change_menulabel()
 function Change_objectlabel()
 {
   global $wp_post_types;
-  $name = 'ブログ';
+  $name = 'トピックス';
   $labels = &$wp_post_types['post']->labels;
   $labels->name = $name;
   $labels->singular_name = $name;
@@ -212,14 +225,27 @@ add_filter('tiny_mce_before_init', 'custom_tiny_mce_formats');
 
 
 // 固定ページのみビジュアルエディタを無効化
-function disable_visual_editor_in_page() {
-	global $typenow;
-	if( $typenow == 'page' ){
-		add_filter('user_can_richedit', 'disable_visual_editor_filter');
-	}
+function disable_visual_editor_in_page()
+{
+  global $typenow;
+  if ($typenow == 'page') {
+    add_filter('user_can_richedit', 'disable_visual_editor_filter');
+  }
 }
-function disable_visual_editor_filter(){
-	return false;
+function disable_visual_editor_filter()
+{
+  return false;
 }
 add_action('load-post.php', 'disable_visual_editor_in_page');
 add_action('load-post-new.php', 'disable_visual_editor_in_page');
+
+
+//投稿のタグをチェックボックスで選択できるようにする
+function change_post_tag_to_checkbox()
+{
+  $args = get_taxonomy('post_tag'); //タクソノミーを入れる
+  $args->hierarchical = true; //Gutenberg用
+  $args->meta_box_cb = 'post_categories_meta_box'; //Classicエディタ用
+  register_taxonomy('post_tag', 'post', $args);
+}
+add_action('init', 'change_post_tag_to_checkbox', 1);

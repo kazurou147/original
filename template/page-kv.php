@@ -1,10 +1,21 @@
-<!-- ブログ -->
+<!-- ブログ アーカイブ -->
 <?php if (is_archive() || is_home()) : ?>
 <!-- ページタイトル  -->
 <div class="c-kv">
   <div class="l-container">
     <h1 class="c-kv__title">
-      ニュース
+      ブログ
+    </h1>
+  </div>
+</div>
+
+<!-- ブログ 個別 -->
+<?php elseif (is_single()) : ?>
+<!-- ページタイトル  -->
+<div class="c-kv">
+  <div class="l-container">
+    <h1 class="c-kv__title">
+      ブログ
     </h1>
   </div>
 </div>
@@ -33,7 +44,12 @@
 
 
 <!-- カスタム投稿 -->
+<!-- カスタム投稿 アーカイブと個別 -->
 <!--?php elseif (get_post_type() === '') : ?-->
+<!-- カスタム投稿 アーカイブ -->
+<!--?php elseif (is_post_type_archive('works')) : ? -->
+<!-- カスタム投稿 個別 -->
+<!-- ?php elseif (is_singular('')) : ? -->
 
 
 

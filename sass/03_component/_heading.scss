@@ -2,20 +2,94 @@
 
 /* heading */
 .c-front-heading {
-  text-align: left;
+  position: relative;
+  text-align: center;
+  padding-top: 95px;
+
+  @include sp {
+    padding-top: 47px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 17px;
+    right: 0;
+    width: 159px;
+    height: 162px;
+    margin: auto;
+    background: url($sitePath + "icon_heading.png") no-repeat 0% 0%;
+    background-size: contain;
+    opacity: 0.2;
+
+    @include sp {
+      width: 116px;
+      height: 138px;
+    }
+  }
 
   &__textBig {
-    margin-bottom: 10px;
-    font-family: $font;
-    color: #000;
-    font-size: 30px;
-    letter-spacing: 0.01em;
-    line-height: 1.4;
+    margin-bottom: 20px;
+    color: $text-color;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+
+    @include sp {
+      margin-bottom: 7px;
+      font-size: 30px;
+    }
+
+    @include xs {
+      font-size: 26px;
+    }
   }
 
   &__textSmall {
-    font-size: 16px;
-    color: #000;
-    padding-top: 5px;
+    display: inline-block;
+    position: relative;
+    padding: 0 35px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $text-color;
+    line-height: 1.4;
+    letter-spacing: 0.2em;
+
+    @include sp {
+      padding: 0 22px;
+      font-size: 12px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: 0;
+      width: 20px;
+      height: 1px;
+      background-color: $text-color;
+
+      @include sp {
+        top: 9px;
+        width: 12px;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 14px;
+      right: 0;
+      width: 25px;
+      height: 1px;
+      background-color: $text-color;
+
+      @include sp {
+        top: 9px;
+        width: 12px;
+      }
+    }
   }
 }
