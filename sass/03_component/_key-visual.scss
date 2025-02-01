@@ -3,28 +3,85 @@
 /* キービジュアル */
 .c-kv {
     position: relative;
-    height: 180px;
-    margin: 0 0 10px 0;
-    padding: 60px 0 20px 0;
+    height: 400px;
     background: $main-color;
 
-    &__img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+    @include sp {
+        height: 340px;
+    }
 
-        img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            object-position: 50%;
+    &__img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__heading {
+        position: absolute;
+        top: 140px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding-top: 57px;
+
+        @include sp {
+            top: 115px;
+            padding-top: 47px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 17px;
+            right: 0;
+            width: 138px;
+            height: 140px;
+            margin: auto;
+            background: url($sitePath + "icon_heading-white.png") no-repeat 0% 0%;
+            background-size: contain;
+            // opacity: 0.2;
+
+            @include sp {
+                width: 116px;
+                height: 138px;
+            }
         }
     }
 
     &__title {
-        position: relative;
+        margin-bottom: 0px !important;
         color: #fff;
-        z-index: 2;
+        font-size: 40px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        line-height: 1.2;
+
+        @include sp {
+            margin-bottom: 7px;
+            font-size: 30px;
+        }
+
+        @include xs {
+            font-size: 26px;
+        }
+    }
+
+    &__subtitle {
+        display: inline-block;
+        position: relative;
+        top: -5px;
+        padding: 0;
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+        line-height: 1.4;
+        letter-spacing: 0.2em;
+
+        @include sp {
+            padding: 0 22px;
+            font-size: 12px;
+        }
     }
 }

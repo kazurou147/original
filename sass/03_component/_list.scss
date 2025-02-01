@@ -1,0 +1,34 @@
+@use "../01_foundation/variable"as *;
+
+.c-list01 {
+    list-style-type: none;
+    margin: 0;
+    padding: 60px 60px 40px 60px;
+    border-radius: 30px;
+    background-color: #fff;
+
+    @include tb {
+        padding: 45px 20px 40px 24px;
+    }
+
+    li {
+        position: relative;
+        margin-bottom: 15px;
+        padding: 0 0 0 30px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.6;
+        letter-spacing: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 21px;
+            height: 14px;
+            background: url($sitePath + "icon_check.png") no-repeat 50% 50%;
+            background-size: cover;
+        }
+    }
+}

@@ -1,95 +1,232 @@
 @use "../01_foundation/variable"as *;
 
-/* heading */
+/* front heading */
 .c-front-heading {
   position: relative;
   text-align: center;
-  padding-top: 95px;
 
-  @include sp {
-    padding-top: 47px;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 17px;
-    right: 0;
-    width: 159px;
-    height: 162px;
-    margin: auto;
-    background: url($sitePath + "icon_heading.png") no-repeat 0% 0%;
-    background-size: contain;
-    opacity: 0.2;
-
-    @include sp {
-      width: 116px;
-      height: 138px;
-    }
+  &__img {
+    text-align: center;
+    line-height: 1;
   }
 
   &__textBig {
-    margin-bottom: 20px;
-    color: $text-color;
+    position: relative;
+    margin-bottom: 10px;
     font-size: 40px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    line-height: 1.2;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-align: center;
+    line-height: 1.6;
+    color: #304885;
 
     @include sp {
-      margin-bottom: 7px;
-      font-size: 30px;
+      margin-bottom: 20px;
+      line-height: 1.3;
     }
 
-    @include xs {
-      font-size: 26px;
+    &--black {
+      color: #000;
+    }
+
+    &--white {
+      color: #fff;
     }
   }
 
   &__textSmall {
-    display: inline-block;
+    display: block;
+    font-family: $font;
+    font-size: 25px;
+    font-weight: 500;
+    font-stretch: condensed;
+    text-align: center;
+    color: #c9d7f9;
+    line-height: 1;
+  }
+}
+
+
+/* Page heading */
+.c-subpage-heading {
+  position: relative;
+  padding-top: 95px;
+  text-align: center;
+  background: url($sitePath + "icon-heading-sub.png") no-repeat 50% 0%;
+  background-size: 95px auto;
+
+  &--pt2 {
+    padding-top: 0;
+    background: none;
+  }
+
+
+  &__textBig {
     position: relative;
-    padding: 0 35px;
+    margin-bottom: 15px;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1;
+    text-align: center;
+    color: #031c5c;
+  }
+
+  &__textSmall {
+    display: block;
+    position: relative;
+    font-family: $font;
     font-size: 18px;
     font-weight: 500;
-    color: $text-color;
-    line-height: 1.4;
+    font-stretch: condensed;
     letter-spacing: 0.2em;
+    text-align: center;
+    color: #b0c4de;
+    line-height: 1;
+  }
+}
+
+.c-subpage-heading02 {
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 92px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #81a9e2;
+    z-index: 1;
 
     @include sp {
-      padding: 0 22px;
-      font-size: 12px;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 14px;
-      left: 0;
-      width: 20px;
-      height: 1px;
-      background-color: $text-color;
-
-      @include sp {
-        top: 9px;
-        width: 12px;
-      }
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 14px;
-      right: 0;
-      width: 25px;
-      height: 1px;
-      background-color: $text-color;
-
-      @include sp {
-        top: 9px;
-        width: 12px;
-      }
+      display: none;
     }
   }
+
+  &__img {
+    text-align: center;
+    line-height: 1;
+  }
+
+  &__textBig {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 18px auto;
+    padding: 0 50px;
+    font-family: $font6;
+    font-size: 80px;
+    font-weight: normal;
+    text-align: center;
+    color: #81a9e3;
+    background-color: #fff;
+    line-height: 0.9;
+    z-index: 2;
+
+    @include sp {
+      display: block;
+      padding: 0 0px;
+      font-size: 60px;
+    }
+
+    &--bg-blue {
+      background-color: #f5f7fb;
+    }
+  }
+
+  &__textSmall {
+    display: block;
+    position: relative;
+    font-family: $font;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #284674;
+    line-height: 1;
+  }
+}
+
+
+.c-subpage-heading03 {
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #81a9e2;
+    z-index: 1;
+
+    @include sp {
+      display: none;
+    }
+  }
+
+  &__img {
+    text-align: center;
+    line-height: 1;
+  }
+
+  &__textBig {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 18px auto;
+    padding: 0 50px;
+    font-family: $font6;
+    font-size: 60px;
+    font-weight: normal;
+    text-align: center;
+    color: #81a9e3;
+    background-color: #fff;
+    line-height: 0.9;
+    z-index: 2;
+
+    @include sp {
+      padding: 0 0px;
+    }
+
+    &--bg-blue {
+      background-color: #f5f7fb;
+    }
+  }
+
+  &__textSmall {
+    display: block;
+    position: relative;
+    font-family: $font;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #284674;
+    line-height: 1;
+  }
+}
+
+
+
+/* 太字 */
+.c-page-heading-other01 {
+  margin: 40px 0 20px 0;
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+}
+
+/* 下線 */
+.c-page-heading-other02 {
+  margin: 40px 0 20px 0;
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  text-decoration: underline;
 }

@@ -5,10 +5,10 @@
 /* 基本 */
 
 .l-container {
-    width: 1260px;
+    width: 1300px;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 50px;
 
     @include tb {
         width: 100%;
@@ -18,10 +18,10 @@
 
 /* 小さい幅 */
 .l-container-small {
-    width: 1120px;
+    width: 1100px;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 50px;
 
     @include tb {
         width: 100%;
@@ -29,12 +29,17 @@
     }
 }
 
+
 /* ヘッダー用 */
 .l-container-header {
-    width: 100%;
+    width: 1600px;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 50px;
+
+    @include tb {
+        padding: 0 20px;
+    }
 }
 
 /* SP&paddingなし */
@@ -45,4 +50,45 @@
         margin: 0 auto;
         padding: 0;
     }
+}
+
+/* 下層ページ */
+.l-container-page {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+
+    @include tb {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+/* 投稿ページ */
+.l-container-post {
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 100px 50px 0 50px;
+
+    @include tb {
+        width: 100%;
+        padding: 50px 20px 0 20px;
+    }
+}
+
+
+/* コンテンツ　左右の余白無し */
+.c-inner {
+    width: 1000px;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+.c-inner-px20 {
+    width: 1000px;
+    max-width: 100%;
+    margin-inline: auto;
+    padding: 0 20px;
 }

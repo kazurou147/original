@@ -1,0 +1,61 @@
+@use "../01_foundation/variable"as *;
+
+/* 下層ページのキービジュアル */
+.c-subpage-common-list {
+    padding: 30px 0 30px 0;
+    background-color: #eaeff9;
+
+
+    &__inner {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px 20px;
+        margin: auto;
+
+        @include sp {
+            gap: 10px;
+        }
+    }
+
+    &__item {
+        width: calc(20% - (20px * 4 / 5));
+
+        @include tb {
+            width: calc(33.3% - (20px * 2 / 3));
+        }
+
+        @include sp {
+            width: calc(50% - (10px * 1 / 2));
+        }
+
+        >a {
+            display: block;
+            width: 100%;
+            height: 50px;
+            padding: 10px 10px;
+            border-radius: 8px;
+            border: solid 1px #fff;
+            background-color: #fff;
+            line-height: 1;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.56;
+            letter-spacing: 0.15em;
+            text-align: center;
+            color: $main-color;
+            transition: 0.2s linear;
+
+            @include sp {
+                padding: 13px 5px;
+                font-size: 14px;
+            }
+
+            &:hover {
+                background-color: $main-color;
+                color: #fff;
+            }
+        }
+    }
+}

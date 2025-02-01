@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/*
+Author: artblue
+Version: 1.0
+ */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200;300;400;500;600;700;900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Serif+JP:wght@200..900&display=swap');
+
+
+
+@font-face {
+  font-family: 'din_m_cond';
+  src:
+    url('../font/din_m_cond.woff2') format('woff2'),
+    url('../font/din_m_cond.woff') format('woff'),
+    url('../font/din_m_cond.otf') format('opentype');
+}
+
+/* font-family: 'din_m_cond' sans-serif; */
+
+
+@font-face {
+  font-family: 'din_m';
+  src:
+    url('../font/din_m.woff2') format('woff2'),
+    url('../font/din_m.woff') format('woff'),
+    url('../font/din_m.otf') format('opentype');
+}
+
+/* font-family: 'din_m' sans-serif; */
+
+
+@font-face {
+  font-family: 'din_ul';
+  src:
+    url('../font/din_ul.woff2') format('woff2'),
+    url('../font/din_ul.woff') format('woff'),
+    url('../font/din_ul.otf') format('opentype');
+}
+
+/* font-family: 'din_m' sans-serif; */
+
+
+/* DIN Next Rounded LT Pro */
+@font-face {
+  font-family: 'dinr_M';
+  src: url('../font/dinr_M.woff2') format('woff2'),
+    url('../font/dinr_M.woff') format('woff'),
+    url('../font/dinr_M.otf') format('opentype');
+}
+
+
+@font-face {
+  font-family: 'dinr_B';
+  src: url('../font/dinr_B.woff2') format('woff2'),
+    url('../font/dinr_B.woff') format('woff'),
+    url('../font/dinr_B.otf') format('opentype');
+}
+
+
+/* 
+font-family: "Noto Sans JP", sans-serif; 
+
+font-family: "Zen Maru Gothic", serif;
+
+*/
+
+
+@font-face {
+  font-family: 'genjyu-lp';
+  src: url('../font/genjyu-lp.eot') format('eot'),
+    url('../font/genjyu-lp.woff2') format('woff2'),
+    url('../font/genjyu-lp.woff') format('woff'),
+    url('../font/genjyu-lp.ttf') format('truetype');
+}
+
+/* font-family: 'genjyu-lp' sans-serif; */
+
+
+@font-face {
+  font-family: 'sofia-l';
+  src: url('../font/sofia-l.woff2') format('woff2'),
+    url('../font/sofia-l.woff') format('woff'),
+    url('../font/sofia-l.otf') format('opentype');
+}
+
+/* font-family: 'sofia-l' sans-serif; */
+
+
+@font-face {
+  font-family: 'shippori-b';
+  src: url('../font/shippori-b.woff2') format('woff2'),
+    url('../font/shippori-b.woff') format('woff'),
+    url('../font/shippori-b.otf') format('opentype');
+}
+
+/* font-family: 'shippori-b' sans-serif; */
+
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+/* font-family: "EB Garamond", serif; */

@@ -1,1081 +1,1044 @@
 @use "../01_foundation/variable"as *;
 
+.p-front {
+    position: relative;
+
+}
+
+
+
 .p-front-mv {
     position: relative;
-    height: 100vh;
-    background: url($sitePath + "front/banner_mv01.jpg") no-repeat 50% 0%;
-    background-size: cover;
-    background-attachment: fixed;
+    padding-inline: 50px;
+
+
+    @include tb {
+        padding-inline: 20px;
+
+        &.vegas-container {
+            overflow: visible !important;
+        }
+
+    }
 
     @include sp {
-        // background-position: 62% 0;
-        background: url($sitePath + "front/banner_mv01-sp.jpg") no-repeat 50% 0%;
-        background-size: cover;
-        background-attachment: fixed;
+        padding-inline: 0;
+    }
+
+
+    &__inner {
+        position: relative;
+        width: 1500px;
+        max-width: 100%;
+        height: 700px;
+        margin-inline: auto;
+        background: url($sitePath + "front/banner_mv01.webp") no-repeat 50% 0%;
+        background-size: 1500px auto;
+        border-radius: 15px;
+        z-index: 778;
+
+        @include sp {
+            height: 500px;
+            border-radius: 0px;
+        }
     }
 
     &__title {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        background: url($sitePath + "img_moya01.png") no-repeat calc(50% - 280px) 0%;
-        background-size: 1012px auto;
+        margin: 0 0 0 80px;
+        padding-top: 420px;
 
         @include sp {
-            background-position: calc(50% - 150px) 0%;
-            background-size: 670px auto;
-        }
-
-        h1 {
-            position: absolute;
-            top: 211px;
-            right: 0;
-            left: 0;
-            width: 200px;
-            margin: auto;
-            writing-mode: vertical-rl;
-            mix-blend-mode: color-burn;
-            font-size: 31px;
-            font-weight: 500;
-            line-height: 1.29;
-            letter-spacing: 0.05em;
-            text-align: left;
-            transform: translateX(-200px);
-            color: #6a4b4b;
-
-            @include sp {
-                top: 110px;
-                height: 314px;
-                width: 68px;
-                font-size: 22px;
-                transform: translateX(-84px);
-                line-height: 2.29;
-            }
-
-            span {
-                display: block;
-                padding-left: 38px;
-
-                @include sp {
-                    display: inline;
-                    padding-left: 50px;
-                }
-            }
+            margin: 0 0 0 23px;
+            padding-top: 275px;
         }
     }
 
-    &__text02 {
-        text-indent: 1.4em;
+    &__title-big {
+        margin-bottom: 15px;
+        text-shadow: 0 0 20px rgba(3, 28, 92, 0.6);
+        font-family: 'Noto Serif JP', "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", serif;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 0.9;
+        color: #fff;
 
         @include sp {
-            text-indent: 0em;
+            margin-bottom: 0px;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.8;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
         }
     }
 
-    &__text03 {
-        text-indent: 0.7em;
+    &__title-small {
+        text-shadow: 0 0 20px rgba(3, 28, 92, 0.6);
+        font-family: 'Noto Serif JP', "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", serif;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.64;
+        letter-spacing: 0.18em;
+        text-align: left;
+        color: #fff;
 
         @include sp {
-            text-indent: 0em;
+            font-size: 16px;
+            line-height: 2.25;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    .vegas-animation-kenburnsrev {
+        @include tb {
+            background-position: 60% 10% !important;
+        }
+
+        @include sp {
+            background-position: 70% 10% !important;
         }
     }
 }
 
-.p-front-mv-reception {
+.p-front-mv-banner {
     position: absolute;
-    bottom: 30px;
-    right: 5px;
-    padding: 50px 0 0 0;
-    background: url($sitePath + "front/img_circle.png") no-repeat 64px 63px;
-    background-size: 442px;
+    bottom: 125px;
+    right: 50px;
+    z-index: 4;
+
+    @media screen and (max-width: 1530px) {
+        bottom: 220px;
+    }
+}
+
+.vegas-content-scrollable {
+    @include tb {
+        overflow: visible !important;
+    }
+}
+
+
+.p-front-mv-time {
+    position: absolute;
+    bottom: 50px;
+    right: 230px;
+    z-index: 3;
+
+    @media screen and (max-width: 1530px) {
+        bottom: 122px;
+    }
+
+    @media screen and (max-width: 1400px) {
+        bottom: 122px;
+        right: 30px;
+    }
+}
+
+
+.p-front-mv-sp {
+    position: relative;
+}
+
+.p-front-mv-banner-sp {
+    position: relative;
+    text-align: center;
+    z-index: 780;
+    margin-top: -178px;
 
     @include sp {
-        position: absolute;
-        bottom: 22px;
-        left: 0;
-        right: 0px;
-        max-width: auto;
-        padding: 0px 0 0 0;
-        background-position: 50% 0;
-        background-size: 296px auto;
+        right: -20px;
+        text-align: right;
+        margin-top: -155px;
     }
+}
 
-    &__title {
+.p-front-mv-time-sp {
+    text-align: center;
+    margin: -30px 0 50px 0;
+}
+
+
+.p-front-news-heading {
+    position: relative;
+    text-align: center;
+
+    &__textBig {
         position: relative;
-        left: 198px;
-        width: 190px;
-        margin-bottom: 20px;
-        padding-top: 85px;
+        margin-bottom: 0px;
+        font-size: 40px;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        font-family: $font;
+        font-stretch: condensed;
         text-align: center;
-
-        @include sp {
-            left: auto;
-            right: auto;
-            width: 190px;
-            margin: 0 auto 10px auto;
-            padding-top: 30px;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 17px;
-            right: 0;
-            width: 128.5px;
-            height: 131px;
-            margin: auto;
-            background: url($sitePath + "front/icon_head-small.png") no-repeat 5% 0%;
-            background-size: contain;
-            opacity: 0.4;
-
-            @include sp {
-                display: none;
-            }
-
-        }
-
-        h2 {
-            position: relative;
-            margin-bottom: 0px;
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            line-height: 1;
-            letter-spacing: 0.2em;
-            color: #653B22;
-            z-index: 2;
-
-            @include sp {
-                font-size: 15px;
-            }
-        }
-
-
-        p {
-            display: inline-block;
-            position: relative;
-            padding: 0 25px;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-            line-height: 1;
-            letter-spacing: 0.2em;
-            color: #653B22;
-            z-index: 2;
-
-            @include sp {
-                font-size: 12px;
-            }
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 9px;
-                left: 0;
-                width: 20px;
-                height: 1px;
-                background-color: #653B22;
-
-                @include sp {
-                    top: 7px;
-                }
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                top: 9px;
-                right: 0;
-                width: 20px;
-                height: 1px;
-                background-color: #653B22;
-
-                @include sp {
-                    top: 7px;
-                }
-            }
-        }
+        line-height: 1.6;
+        color: #b0c4de;
     }
 
-    &__row {
+    &__textSmall {
+        display: block;
+        font-size: 25px;
+        font-weight: 500;
+        text-align: center;
+        color: #284674;
+        line-height: 1;
+    }
+}
+
+
+
+
+
+
+// News
+.p-front-news {
+    position: absolute;
+    bottom: 50px;
+    left: 55px;
+    width: 750px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+.p-front-news-block01 {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 0px;
+
+    &__left {
+        width: 100px;
+    }
+
+    &__en {
+        font-family: $font;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0.9px;
+        text-align: center;
+        color: #5b70a5;
+        padding-top: 14px;
+    }
+
+    &__right {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        width: calc(100% - 100px);
+        padding: 0px 0 0px 0px;
 
         @include sp {
-            justify-content: center;
-        }
-    }
-
-    &__item {
-        position: relative;
-        width: 203px;
-        height: 203px;
-        margin: 0 15px 0 0;
-
-        @include sp {
-            width: 152px;
-            max-width: 48%;
-            height: 152px;
-            margin: 0 5.5px 0 5.5px;
-        }
-
-        &:first-child {
-            a figure {
-                width: 31px;
-            }
-        }
-
-        &:last-child {
-            a figure {
-                width: 55px;
-            }
-        }
-
-        a {
-            display: block;
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            padding: 42px 10px 20px 10px;
-            color: #fff;
-
-            @include sp {
-                padding: 34px 10px 20px 10px;
-                font-size: 11px;
-            }
-
-            figure {
-                // display: block;
-                height: 70px;
-                margin: 0 auto 10px auto;
-                text-align: center;
-
-                @include sp {
-                    height: 45px;
-                }
-            }
-
-
-            .c-arrow01 {
-                display: block;
-                position: relative;
-                width: 25px;
-                margin: auto;
-
-                @include sp {
-                    width: 18px;
-                }
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    bottom: -10px;
-                    left: 0;
-                    right: 0;
-                    width: 25px;
-                    height: 1px;
-                    margin: auto;
-                    background-color: #fff;
-
-                    @include sp {
-                        width: 18px;
-                    }
-                }
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -6px;
-                    right: 0;
-                    width: 10px;
-                    height: 1px;
-                    margin: auto;
-                    transform: rotate(45deg);
-                    background-color: #fff;
-
-                    @include sp {
-                        bottom: -7px;
-                        width: 6px;
-                    }
-                }
-            }
-        }
-
-        &:first-child {
-            a {
-                background: url($sitePath + "front/mv_reception01.png") no-repeat 50% 50%;
-                background-size: cover;
-            }
-        }
-
-        &:last-child {
-            a {
-                background: url($sitePath + "front/mv_reception02.png") no-repeat 50% 50%;
-                background-size: cover;
-            }
-        }
-    }
-}
-
-
-
-// News & Topics
-.p-front-newstopics {
-    padding: 50px 0 80px 0;
-    background-color: rgba(255, 249, 250, 0.85);
-
-    @include sp {
-        padding: 72px 0 60px 0;
-    }
-}
-
-// お知らせ トッピクスの並び
-.p-front-newstopics-block01 {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 37px;
-
-    @include sp {
-        margin-bottom: 5px;
-    }
-
-    &__item {
-        width: 590px;
-        max-width: 48%;
-
-        @include sp {
-            max-width: 100%;
-            margin: 0 auto 45px auto;
+            padding: 0px 0 0px 0px;
+            border-left: none;
         }
     }
 
     &__btn {
-        text-align: right;
+        width: 75px;
+        text-align: center;
 
-        >a {
+        a {
             display: inline-block;
-            width: 145.4px;
-            height: 30px;
-            margin: 0;
-            padding: 6px 30px 5px 10px;
-            background: url(./img/icon_arrow-white.png) no-repeat calc(100% - 15px) 44%;
-            background-size: 14px auto;
-            background-color: $main-color;
-            font-size: 12px;
-            font-weight: 600;
+            position: relative;
+            top: -2px;
+            font-family: $font;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.6;
+            letter-spacing: 0.75px;
+            text-align: left;
+            color: #5b70a5;
+            padding: 0 20px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -4px;
+                left: 0px;
+                width: 1px;
+                height: 30px;
+                background-color: #5b70a5;
+            }
         }
     }
+}
+
+.p-front-news-sp-block01 {
+    padding: 0 20px;
+
+    &__btn {
+        padding: 5px;
+        border-top: 1px solid #5A70A5;
+        text-align: center;
+        color: #5B70A5;
+        font-family: $font;
+    }
+
+    margin-bottom: 90px;
 }
 
 
 
 .p-front-post-list {
-    margin: -15px 10px 0 0;
-    padding: 25px 22px 20px 22px;
-    background-color: #fff;
+    width: calc(100% - 75px);
+    padding-top: 2px;
 
     @include sp {
-        margin: -15px 0px 0 0;
-        padding: 25px 22px 20px 22px;
+        width: 100%;
+        margin-bottom: 10px;
+        padding-top: 0px;
     }
-
-    h3 {
-        margin-bottom: 25px;
-        font-size: 24px;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        color: $text-color;
-
-        @include sp {
-            font-size: 22px;
-        }
-    }
-
 
     &__item {
-        padding: 20px 0 15px 0;
-        border-top: 1px solid #ededed;
+        display: flex;
+        justify-content: flex-start;
+
+        @include tb {
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
     }
 
     &__info {
         display: flex;
-        justify-content: flex-start;
-        padding: 0px 0px 0 0px;
-    }
+        flex-wrap: wrap;
+        // position: relative;
+        // top: 7px;
+        width: 120px;
+        margin-top: 3px;
 
-    &__time {
-        width: 90px;
-        font-size: 15px;
-        line-height: 1;
-        letter-spacing: 0.05em;
-        color: $text-color;
-        font-family: $font;
-    }
-
-    &__category {
-        display: block;
-        position: relative;
-        top: -4px;
-        list-style: none;
-        margin-bottom: 5px;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 1;
-        text-align: center;
-
-        span {
-            display: block;
-            padding: 3px 10px 4px 10px;
-            color: #fff;
-        }
-    }
-
-    &__link {
-        flex: 1;
-
-        @include sp {
+        @include tb {
             width: 100%;
         }
     }
 
-    &__title {
-        font-size: 14px;
-        font-weight: 600;
-    }
-}
-
-.p-front-newstopics-block02 {
-    position: relative;
-    padding: 40px 15px 36px 15px;
-    text-align: center;
-    color: $text-color;
-
-    @include sp {
-        padding: 40px 20px 20px 20px;
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0px;
-        left: 0px;
+    &__time {
         width: 100%;
-        height: 100%;
-        border: 1px solid $text-color;
-        opacity: 0.1;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        width: calc(100% - 12px);
-        height: calc(100% - 12px);
-        border: 1px solid $text-color;
-        opacity: 0.1;
-    }
-
-    h3 {
-        margin-bottom: 30px;
-        font-size: 22px;
-        letter-spacing: 0.2em;
-
-        @include sp {
-            font-size: 20px;
-        }
-
-        @include xs {
-            font-size: 16px;
-        }
-    }
-
-    p {
-        width: 942px;
-        max-width: 100%;
-        margin: 0 auto 30px auto;
+        height: 32px;
+        padding: 10px 10px 5.5px 10px;
+        border-radius: 16px;
+        background-color: #5b70a5;
+        font-family: $font;
         font-size: 15px;
-        letter-spacing: 0.05em;
+        font-weight: 500;
+        line-height: 1;
+        text-align: center;
+        color: #fff;
 
-        @include sp {
-            margin: 0 auto 60px auto;
+        @include tb {
+            height: auto;
+            margin-bottom: 5px;
+            padding: 0;
+            background-color: transparent;
+            color: #5a70a5;
             text-align: left;
         }
     }
 
-    &__btn {
-        position: relative;
-        z-index: 2;
+    &__title {
+        padding: 0 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: left;
+        color: #000;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @include tb {
+            padding: 0 0px;
+        }
     }
 }
 
 
+/* ページ内リンク */
+.p-common-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 30px 20px 35px 20px;
+    text-align: center;
 
+    .menu-item-img {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        height: 52px;
+        margin-bottom: 5px;
+    }
+
+    .menu-item-jp {
+        margin-bottom: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.88;
+        text-align: center;
+        color: #031c5c;
+    }
+
+    .menu-item-en {
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: condensed;
+        text-align: center;
+        color: #b0c4de;
+        line-height: 1;
+    }
+}
+
+
+/* 診療案内 */
 .p-front-medical {
-    padding: 85px 0 163px 0;
-    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    padding: 80px 0 100px 0;
+    background: url($sitePath + "front/medical-bg01.png") no-repeat 50% 50%, url($sitePath + "front/medical-bg02.png") no-repeat 50% 0px;
+    background-size: cover, 1600px auto;
+    background-color: #304885;
+    z-index: 3;
 
-    @include sp {
-        padding: 75px 0 100px 0;
+    /* 外枠 */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 1px;
+        left: 15px;
+        width: calc(100% - 30px);
+        height: calc(100% - 15px);
+        border-left: 2px solid #fff;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+
+        @include tb {
+            display: none;
+        }
+    }
+
+    &__memo {
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        text-align: center;
+        color: #fff;
+
+        @include sp {
+            text-align: left;
+            line-height: 1.8;
+        }
     }
 }
 
 .p-front-medical-block01 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 32px;
+
+    @include tb {
+        gap: 40px 30px;
+    }
+
+    @include sp {
+        gap: 22px 0;
+        margin-bottom: 20px;
+    }
+
 
     &__item {
-        width: 330px;
-        max-width: 32%;
-
-        @include sp {
-            width: 450px;
-            max-width: 100%;
-            margin: 0 auto 25px auto;
-        }
-    }
-
-    &__link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        aspect-ratio: 1/1;
-        font-size: 22px;
-        font-weight: 500;
-        line-height: 1.27;
-        letter-spacing: 0.2em;
-        text-align: center;
-        text-shadow: 0 0 20px rgba(0, 54, 81, 0.7);
-        color: #fff;
-
-        @include sp {
-            aspect-ratio: 330/240;
-        }
-    }
-
-
-    &__link01 {
-        background: url($sitePath + "front/front_medial01.jpg") no-repeat 50% 50%;
-        background-size: cover;
-
-        @include sp {
-            background: url($sitePath + "front/front_medial01-sp.jpg") no-repeat 50% 50%;
-            background-size: cover;
-        }
-    }
-
-    &__link02 {
-        background: url($sitePath + "front/front_medial02.jpg") no-repeat 50% 50%;
-        background-size: cover;
-
-        @include sp {
-            background: url($sitePath + "front/front_medial02-sp.jpg") no-repeat 50% 50%;
-            background-size: cover;
-        }
-    }
-
-    &__link03 {
-        background: url($sitePath + "front/front_medial03.jpg") no-repeat 50% 50%;
-        background-size: cover;
-
-        @include sp {
-            background: url($sitePath + "front/front_medial03-sp.jpg") no-repeat 50% 50%;
-            background-size: cover;
-        }
-    }
-}
-
-.p-front-medical-block02 {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-
-    &__item {
-        width: 510px;
-        max-width: 48%;
-        height: 100%;
-
-        @include sp {
-            width: 450px;
-            max-width: 100%;
-            margin: 0 auto 25px auto;
-        }
-    }
-
-    &__link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 510/100;
-        font-size: 19px;
-        font-weight: 500;
-        line-height: 1.26;
-        letter-spacing: 0.2em;
-        text-align: center;
-        color: #fff;
-
-        @include sp {
-            aspect-ratio: 330/100;
-        }
-    }
-
-    &__link01 {
-        background: url($sitePath + "front/front_medial04.jpg") no-repeat 50% 50%;
-        background-size: cover;
-
-        @include sp {
-            background: url($sitePath + "front/front_medial04-sp.jpg") no-repeat 50% 50%;
-            background-size: cover;
-        }
-    }
-
-    &__link02 {
-        background: url($sitePath + "front/front_medial05.jpg") no-repeat 50% 50%;
-        background-size: cover;
-
-        @include sp {
-            background: url($sitePath + "front/front_medial05-sp.jpg") no-repeat 50% 50%;
-            background-size: cover;
-        }
-    }
-}
-
-
-.p-front-medical-block03 {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-
-    &__item01 {
-        width: 276px;
-        max-width: 30%;
-
-        @include sp {
-            width: 450px;
-            max-width: 100%;
-        }
-    }
-
-    &__item02 {
-        width: 740px;
-        max-width: 68%;
-
-        @include sp {
-            width: 450px;
-            max-width: 100%;
-        }
-    }
-
-    &__link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100px;
-        font-size: 19px;
-        font-weight: 500;
-        line-height: 1.26;
-        letter-spacing: 0.2em;
-        text-align: center;
-        color: #fff;
-
-        @include sp {
-            height: auto;
-            aspect-ratio: 300/100;
-        }
-    }
-
-    &__link01 {
-        background: url($sitePath + "front/front_medial06.png") no-repeat 50% 50%;
-        background-size: cover;
-
-        @include sp {
-            background: url($sitePath + "front/front_medial06-sp.png") no-repeat 50% 50%;
-            background-size: contain;
-        }
-
-        img {
-            position: relative;
-            margin-right: 20px;
-        }
-    }
-
-    &__link02 {
         position: relative;
-        background: #fff;
-        color: $main-color;
+        width: calc(50% - (40px * 1 / 2));
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.16);
+        background-color: #f8f9ff;
+        padding: 6px;
+        overflow: hidden;
+        z-index: 2;
+
+        @include tb {
+            width: calc(50% - (30px * 1 / 2));
+        }
+
+        @include sp {
+            width: 100%;
+        }
 
         &::before {
             content: '';
             position: absolute;
-            top: 50%;
-            right: 40px;
-            width: 25px;
-            height: 1px;
-            margin: auto;
-            background-color: $main-color;
+            inset: auto 0 -45px 0;
+            width: 155px;
+            height: 155px;
+            margin-inline: auto;
+            background-color: #8ba3dd;
+            opacity: 0.16;
+            border-radius: 200px;
+            z-index: -1;
+        }
+
+        &>a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            border: 1px solid #8BA3DD;
+            padding: 20px;
+        }
+    }
+
+    &__title {
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0.2em;
+        text-align: center;
+        color: #5b70a5;
+    }
+
+    &__text {
+        font-family: $font;
+        font-size: 20px;
+        font-weight: 500;
+        font-stretch: condensed;
+        text-align: center;
+        color: #b0c4de;
+    }
+
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 113px;
+    }
+}
+
+
+.p-front-medical-block02 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px 35px;
+    margin-bottom: 45px;
+
+    @include tb {
+        gap: 40px 25px;
+    }
+
+    @include tb {
+        gap: 20px 0px;
+    }
+
+    &__item {
+        position: relative;
+        width: calc(33.3% - (35px * 2 / 3));
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.16);
+        background-color: #f8f9ff;
+        padding: 6px;
+        overflow: hidden;
+        z-index: 2;
+
+        @include tb {
+            width: calc(33.3% - (25px * 2 / 3));
+        }
+
+        @include sp {
+            width: 100%;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: auto 0 -39px 0;
+            width: 120px;
+            height: 120px;
+            margin-inline: auto;
+            background-color: #8ba3dd;
+            opacity: 0.16;
+            border-radius: 200px;
+            z-index: -1;
+        }
+
+        &>a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            border: 1px solid #8BA3DD;
+            padding: 35px 5px 20px 5px;
+        }
+    }
+
+    &__title {
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0.2em;
+        text-align: center;
+        color: #5b70a5;
+
+        @include tb {
+            font-size: 22px;
+        }
+
+        @include sp {
+            font-size: 25px;
+        }
+    }
+
+    &__text {
+        font-family: $font;
+        font-size: 20px;
+        font-weight: 500;
+        font-stretch: condensed;
+        text-align: center;
+        color: #b0c4de;
+    }
+
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 113px;
+    }
+}
+
+
+
+
+
+
+/* クリニックの特徴 */
+.p-front-feature {
+    position: relative;
+    padding: 90px 0 150px 0;
+    background: url($sitePath + "front/feature-bg01.png") no-repeat 100% 0%;
+    background-size: 687px auto;
+    background-attachment: fixed;
+    background-color: #f8f9ff;
+
+    @include pc {
+        background-size: 530px auto;
+    }
+
+    @include sp {
+        padding: 90px 0 120px 0;
+        background: none;
+        background-color: #f8f9ff;
+    }
+}
+
+
+.p-front-feature-block01 {
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 200px;
+
+        @include sp {
+            margin-bottom: 100px;
+        }
+
+        &--rev {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__img {
+        position: relative;
+        width: calc(50% - 100px);
+
+
+        @include sp {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+
+    &__number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -45px;
+        right: -30px;
+        width: 170px;
+        height: 170px;
+        padding-top: 15px;
+        border-radius: 200px;
+        background-size: cover;
+        background-color: #8ba3dd;
+        z-index: 1;
+
+        @include sp {
+            top: -50px;
+            right: 15px;
+            width: 100px;
+            height: 100px;
+        }
+
+        &--rev {
+            right: auto;
+            left: -30px;
+
+            @include sp {
+                top: -50px;
+                left: auto;
+                right: 15px;
+            }
         }
 
         &::after {
             content: '';
             position: absolute;
-            top: calc(50% - 3px);
-            right: 40px;
-            width: 7px;
-            height: 1px;
-            margin: auto;
-            transform: rotate(45deg);
-            background-color: $main-color;
+            top: 0px;
+            right: -8px;
+            width: 172px;
+            height: 172px;
+            padding-top: 15px;
+            border-radius: 200px;
+            border: 1px solid #fff;
+
+            @include sp {
+                width: 104px;
+                height: 104px;
+            }
         }
     }
-}
 
-
-/* 東京HARTクリニックの特徴 */
-.p-front-feature {
-    position: relative;
-    padding: 165px 0 0 0;
-
-    @include sp {
-        padding: 65px 0 0 0;
-    }
-
-    // &::before {
-    //     content: '';
-    //     position: fixed;
-    //     bottom: 0;
-    //     right: 0;
-    //     width: 882px;
-    //     height: 889px;
-    //     background: url($sitePath + "img_moya02.png") no-repeat 100% 10%;
-    // }
-
-
-}
-
-.p-front-feature-block01 {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-
-    &__left {
+    &__number-inner {
+        display: block;
         position: relative;
-        width: 600px;
-        max-width: 51%;
-
-        @include sp {
-            max-width: 100vw;
-            margin: 0 -20px 0 -20px;
-            padding-top: 80px;
-        }
-    }
-
-    &__number {
-        position: absolute;
-        top: -26px;
-        right: -27px;
-        width: 169px;
-        height: 158px;
-        padding-top: 36px;
-        background-color: $main-color;
-        color: #fff;
-        font-size: 60px;
-        font-weight: 500;
-        text-align: center;
-        line-height: 1.2;
         z-index: 2;
+        font-family: $font3;
+        font-size: 80px;
+        font-weight: 200;
+        line-height: 0.38;
+        text-align: center;
+        color: #fff;
+        line-height: 0.9;
 
         @include sp {
-            top: 0;
-            right: 0;
-            left: 0;
-            width: 169px;
-            height: 158px;
-            margin: auto;
-            padding-top: 36px;
-            font-size: 60px;
+            font-size: 44px;
         }
 
         span {
             display: block;
-            font-size: 12px;
+            font-family: $font;
+            font-size: 18px;
             font-weight: 500;
-            letter-spacing: 0.2em;
+            font-stretch: condensed;
+            text-align: center;
+            margin-bottom: 15px;
+
+            @include sp {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
         }
     }
 
-    &__right {
-        width: 440px;
-        max-width: 48%;
-        padding: 0px 0 0px 40px;
+    &__content {
+        position: relative;
+        width: calc(50% + 40px);
+        padding-left: 40px;
 
         @include sp {
-            max-width: 100vw;
-            margin: 0 -20px;
-            padding: 50px 20px 0px 20px;
-            background: url($sitePath + "img_moya02-sp.png") no-repeat -100% -215px;
-            background-size: 524px auto;
+            width: 100%;
+            padding: 0;
         }
 
-        p {
-            margin-bottom: 1.5em;
-            color: $text-color;
-        }
-    }
+        &--rev {
+            padding: 0 40px 0 0;
 
-    &__right2 {
-        @include sp {
-            background: url($sitePath + "img_moya02-sp.png") no-repeat -250px -215px;
-            background-size: 524px auto;
+            @include sp {
+                padding: 0;
+            }
         }
+
     }
 
     &__title {
-        margin-bottom: 53px;
-        color: $text-color;
-        font-size: 32px;
-        font-weight: 500;
-        line-height: 1.59;
-        letter-spacing: 0.2em;
+        margin-bottom: 45px;
+        font-size: 35px;
+        font-weight: 300;
+        line-height: 1.71;
+        letter-spacing: 5.25px;
+        text-align: left;
+        color: #304885;
+
+        @include tb {
+            font-size: 34px;
+        }
 
         @include sp {
-            font-size: 24px;
-            text-align: center;
+            margin-bottom: 35px;
+            font-size: 25px;
         }
 
-        @include xs {
-            font-size: 22px;
+        &--rev {
+            text-align: right;
+
+            @include sp {
+                text-align: left;
+            }
+        }
+    }
+
+    &__text {
+        padding: 30px 30px 30px 40px;
+        border-radius: 20px;
+        background-color: rgba($color: #fff, $alpha: 0.8);
+
+        @include sp {
+            padding: 0px;
+            border-radius: 0px;
+            background-color: transparent;
+        }
+
+        p {
+            color: #031c5c;
+        }
+    }
+
+
+    &__title-symbol {
+        font-size: 25px;
+
+        @include sp {
+            font-size: 10px;
+        }
+    }
+
+    &__title-notes {
+        display: block;
+        font-size: 16px;
+        letter-spacing: 0;
+
+        @include sp {
+            font-size: 11px;
         }
     }
 }
 
 
-/* 施設・設備紹介 */
-.p-front-facility {
-    padding: 120px 0 143px 0;
-    background-color: #f9f9f9;
 
-    @include sp {
-        padding: 65px 0 95px 0;
-    }
-
-    &__btn {
-        text-align: center;
-
-        a {
-            padding-left: 7em;
-            padding-right: 7em;
-        }
-    }
-}
-
-
-/* 医院情報 */
-.p-front-information {
-    padding: 132px 0 140px 0;
-    background: url($sitePath + "front/front_info01.jpg") no-repeat 50% 50%;
+/* ごあいさつ */
+.p-front-greeting {
+    position: relative;
+    padding: 100px 0 190px 0;
+    background: url($sitePath + "front/greeting-bg01.webp") no-repeat 50% 0px;
     background-size: cover;
 
     @include sp {
-        padding: 30px 0 55px 0;
-        background: url($sitePath + "front/front_info01-sp.jpg") no-repeat 50% 50%;
-        background-size: cover;
+        padding: 100px 0 50px 0;
     }
 
-    &__inner {
-        padding: 48px 85px 85px 85px;
-        background-color: #fff;
+    /* 外枠 */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: calc(100% - 30px);
+        height: calc(100% - 30px);
+        border: 2px solid #B1C4DE;
+        border-radius: 8px;
 
         @include tb {
-            padding: 48px 15px 85px 15px;
-        }
-
-        @include sp {
-            width: calc(100% - 40px);
-            margin: 0 20px 0 20px;
-            padding: 48px 0 0px 0;
+            display: none;
         }
     }
 }
 
-.p-front-information-block01 {
+.p-front-greeting-block01 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
 
-    &__item {
-        width: 450px;
-        max-width: 48%;
+    &--rev {
+        flex-direction: row-reverse;
+    }
+
+    &__left {
+        position: relative;
+        width: 522px;
+        max-width: 45%;
+
+        img {
+            border-radius: 22px;
+            box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.16);
+        }
 
         @include sp {
+            width: 100%;
             max-width: 100%;
+            margin-bottom: 50px;
+            order: 1;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &__right {
+        position: relative;
+        max-width: 51%;
+
+        @include sp {
+            width: 100%;
+            max-width: 100%;
+            order: 2;
+        }
+    }
+
+    &__positon {
+        margin-bottom: 14px;
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1;
+        letter-spacing: 6.11px;
+        text-align: left;
+        color: #5b70a5;
+    }
+
+    h3 {
+        margin-bottom: 0px;
+        font-size: 35px;
+        font-weight: 500;
+        letter-spacing: 0.25em;
+    }
+
+    &__kana {
+        font-family: $font;
+        font-weight: 500;
+        font-size: 25px;
+        font-stretch: condensed;
+        color: #8ba3dd;
+        line-height: 1.8;
+    }
+
+    &__text {
+        margin-top: 65px;
+
+        @include sp {
+            margin-top: 40px;
         }
 
-        small {
+        p {
+            line-height: 2.19;
+            color: #2d2d2d;
+        }
+    }
+
+    &__btn {
+        display: none;
+        text-align: right;
+        padding-top: 50px;
+
+        @include sp {
             display: block;
-            margin: 4px 0 30px 0;
-            font-size: 12px;
-
-            @include sp {
-                padding-left: 15px;
-            }
+            text-align: center;
         }
     }
 
-    &__table01 {
-        width: 100%;
-        padding: 10px 18px 13px 10px;
-        background-color: #945d5d;
-        color: #fff;
 
-        @include xs {
-            padding: 10px 2px 13px 2px;
+
+}
+
+
+
+/* 初めてクリニックをご利用いただく方へ */
+.p-front-care {
+    padding: 90px 0 120px 0;
+    background: url($sitePath + "front/care-bg01.webp") no-repeat 50% 0px;
+    background-size: cover;
+
+    @include sp {
+        padding: 90px 0 70px 0;
+    }
+
+    &__btn {
+        width: 411px;
+        max-width: 100%;
+        margin-inline: auto;
+
+        @include sp {
+            padding-top: 30px;
+        }
+    }
+}
+
+.p-front-care-block01 {
+    margin-bottom: 10px;
+    background-color: rgba($color: #fff, $alpha: 0.9);
+    border-radius: 20px;
+    padding: 0 20px;
+
+    &__inner {
+        width: 860px;
+        max-width: 100%;
+        margin: auto;
+        padding: 70px 0;
+    }
+
+    &__titie {
+        position: relative;
+        margin-bottom: 13px;
+        padding-left: 32px;
+        font-family: $font;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.6;
+
+        @include sp {
+            font-size: 18px;
         }
 
-        table {
-            width: 100%;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 1.5px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: url($sitePath + "icon_list01.png") no-repeat 0px 0px;
+            background-size: 20px;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 2.14;
+        color: #363636;
+        font-family: $font;
+
+        ul {
             margin: 0;
-
-
-            th {
-                padding: 5px 5px;
-                border: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                border-right: 1px solid rgba(255, 255, 255, 0.2);
-                background-color: #945d5d;
-                font-size: 13px;
-                font-weight: 400;
-                text-align: left;
-
-                span {
-                    margin-right: 10px;
-                    padding: 0 5px;
-                    background-color: rgba(255, 255, 255, 0.2);
-                    color: #fff;
-                    text-align: center;
-                    font-size: 10px;
-                    font-weight: 600;
-                    line-height: 1;
-
-                    @include sp {
-                        margin-right: 0px;
-                    }
-                }
-            }
-
-            td {
-                padding: 0 10px;
-                border: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                font-size: 12px;
-                font-weight: 500;
-                text-align: center;
-
-                @include sp {
-                    padding: 0 8px;
-                }
-            }
-
-            .p-table01-first {
-                padding: 0 10px 0 15px;
-
-                @include sp {
-                    padding: 0 8px 0 13px;
-                }
-            }
-
-            tbody tr:last-child {
-
-                th,
-                td {
-                    border-bottom: none;
-                }
-            }
+            font-family: $font;
         }
     }
 
-    &__table02 {
-        table {
-            width: 100%;
-            margin: 0;
-
-            th {
-                width: 120px;
-                padding: 26px 0 23px 0;
-                border: none;
-                border-bottom: 2px dotted rgba(0, 0, 0, 0.4);
-                background: none;
-                font-size: 13px;
-                font-weight: 600;
-                line-height: 1.38;
-                text-align: left;
-
-                @include sp {
-                    display: block;
-                    width: 100%;
-                    padding: 26px 15px 10px 15px;
-                    border: none;
-                }
-            }
-
-            td {
-                padding: 26px 0 23px 0;
-                border: none;
-                border-bottom: 2px dotted rgba(0, 0, 0, 0.4);
-                background: none;
-                font-size: 13px;
-                font-weight: 600;
-                line-height: 1.38;
-
-                @include sp {
-                    display: block;
-                    width: 100%;
-                    padding: 0px 15px 23px 15px;
-                }
-
-                img {
-                    position: relative;
-                    top: -2px;
-                    margin-right: 8px;
-                }
-            }
-
-            tr:first-child {
-
-                th,
-                td {
-                    border-top: 2px dotted rgba(0, 0, 0, 0.4);
-                }
-
-                @include sp {
-                    td {
-                        border-top: none;
-                    }
-                }
-            }
-
-            @include sp {
-                tr:last-child {
-                    td {
-                        border: none;
-                    }
-                }
-            }
-        }
-    }
 
 }

@@ -2,10 +2,11 @@
 // Variable
 // --------------------------- 
 $break-pc: 1200px;
-$break-tb: 1049px;
+$break-tb: 1130px;
+$break-tb-sm: 900px;
 $break-sp: 767px;
 $break-xs: 375px;
-$break-header: 1300px;
+$break-header: 1370px;
 
 @mixin pc {
     @media screen and (max-width: ($break-pc)) {
@@ -25,6 +26,12 @@ $break-header: 1300px;
     }
 }
 
+@mixin tb-sm {
+    @media screen and (max-width: ($break-tb-sm)) {
+        @content;
+    }
+}
+
 @mixin xs {
     @media screen and (max-width: ($break-xs)) {
         @content;
@@ -39,14 +46,30 @@ $break-header: 1300px;
 
 
 // Color 
-$main-color: #ef939f;
-$text-color:#653b22;
-$bg-color: #fef7f1;
+$main-color: #031c5c;
+$text-color:#031c5c;
+$sub-color:#d2bc49;
+$bg-color: rgba($color: $main-color, $alpha: 0.1);
 
 // Img
-$sitePath: "./img/";
+$sitePath: "../img/";
 
 // Font 
 // 部分的に使われるフォント
-$font: "Akshar",
-sans-serif
+$font: 'din_m_cond',
+sans-serif;
+
+$font2: 'din_m',
+sans-serif;
+
+$font3: 'din_ul',
+sans-serif;
+
+$font4: 'dinr_B',
+sans-serif;
+
+$font5: "sofia-pro",
+sans-serif;
+
+$font6: "EB Garamond",
+sans-serif;

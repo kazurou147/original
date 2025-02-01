@@ -2,5 +2,5 @@
   "dartsass.disableSourceMap": true,
   "dartsass.outputFormat": "cssonly",
   "dartsass.sassBinPath": "node_modules/sass/sass.js",
-  "dartsass.targetDirectory": "./"
+  "dartsass.targetDirectory": "./css"
 }

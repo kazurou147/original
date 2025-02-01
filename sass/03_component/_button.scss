@@ -4,121 +4,133 @@
 .c-btn01 {
   display: inline-block;
   position: relative;
-  width: auto;
-  max-width: 100%;
-  padding: 1em 4em 1em 2em;
+  width: 100%;
+  padding: 0.8em 40px 0.9em 28px;
+  border-radius: 100px;
   color: #fff;
-  background: url($sitePath + "icon_arrow-white.png") no-repeat calc(100% - 20px) 44%;
-  background-size: 20px auto;
-  background-color: $main-color;
+  background-color: #2f6ac3;
   transition: all 0.2s;
   box-sizing: border-box;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  font-size: 14px;
+  letter-spacing: 0.2em;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 1.4;
   text-align: center;
   text-decoration: none !important;
 
   @include sp {
-    font-weight: 400;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    opacity: 0;
-    transition: 0.3s ease;
+    max-width: 100%;
+    font-size: 16px;
   }
 
   &:hover {
-    opacity: 1;
+    opacity: 0.7;
+  }
 
-    &::after {
-      opacity: 0.5;
+  &--small {
+    max-width: 234px;
+
+    @include sp {
+      display: block;
+      max-width: 100%;
     }
   }
 
 
 
   &--large {
-    font-size: 15px;
-    padding: 1em 6em 1em 6em;
+    font-size: 22px;
 
-    @include sp {
-      width: 450px;
-      max-width: 100%;
-      padding: 1em 0.5em 2.5em 0.5em;
+    @include tb {
+      padding: 0.8em 35px 0.9em 20px;
+      font-size: 16px;
+    }
 
-      &::before {
-        top: auto;
-        bottom: 20px;
-        left: 0;
-        right: 0;
+    &::before {
+      top: 42%;
+      right: 25px;
+      width: 22px;
+      height: 7px;
+
+      @include tb {
+        right: 20px;
+        width: 18px;
+        height: 6px;
       }
+    }
 
-      &::after {
-        top: auto;
-        bottom: 22px;
-        left: 0;
-        right: 0;
-        transform: translateX(6px) rotate(45deg);
+    &::after {
+      border-width: 0 0 68px 68px;
+
+      @include tb {
+        border-width: 0 0 48px 48px;
       }
     }
   }
 }
 
-.c-btn-radius {
-  display: block;
+
+
+
+.c-btn02 {
+  display: inline-block;
   position: relative;
-  width: 180px;
-  max-width: 100%;
-  padding: 11px 10px 12px;
-  // border: 1px solid $main-color;
-  border-radius: 50px;
+  width: auto;
+  padding: 1.5em 3.5em 1.5em 3.5em;
+  border-radius: 100px;
   color: #fff;
-  background-color: $main-color;
+  background-color: #5b70a5;
   transition: all 0.2s;
   box-sizing: border-box;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  font-size: 15px;
-  line-height: 1.2;
+  letter-spacing: 0.2em;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
   text-align: center;
   text-decoration: none !important;
 
-  @include header {
-    width: 130px;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+  @include sp {
     width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    background-color: #fff;
-    opacity: 0;
-    transition: 0.3s ease;
+    max-width: 100%;
+    padding: 0.5em;
+    font-size: 16px;
   }
 
   &:hover {
-    opacity: 1;
+    opacity: 0.7;
+  }
+}
 
-    &::after {
-      opacity: 0.5;
-    }
+
+.c-btn03 {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding: 0.5em 10px 0.5em 10px;
+  border-radius: 50px;
+  background-color: #81a9e3;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  letter-spacing: 0.05em;
+  font-family: $font2;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1;
+  text-align: center;
+  color: #fff;
+  text-decoration: none !important;
+
+  @include sp {
+    max-width: 100%;
   }
 
+  &:hover {
+    opacity: 0.7;
+  }
 
-  img {
-    margin-right: 8px;
+  &>img {
+    position: relative;
+    top: -2px;
+    margin-right: 13px;
   }
 }

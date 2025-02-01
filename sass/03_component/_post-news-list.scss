@@ -1,7 +1,7 @@
 @use "../01_foundation/variable"as *;
 
 // 
-// シンプルな記事一覧
+// よくあるニュース記事一覧
 // サムネイル画像なし
 // 
 .c-post-news-list {
@@ -9,75 +9,118 @@
     padding: 0;
 
     &__item {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    &__info {
-        display: flex;
-        justify-content: flex-start;
-        width: 300px;
-        margin-right: 30px;
-        padding: 0px 0px 0 0px;
+        padding: 85px 0 80px 0;
+        border-bottom: 1px solid rgba($color: #707070, $alpha: 0.2);
 
         @include sp {
-            width: 100%;
-            margin: 0;
+            padding: 55px 0 50px 0;
         }
 
+        &:first-of-type {
+            padding: 0px 0 80px 0;
 
+            @include sp {
+                padding: 0px 0 50px 0;
+            }
+        }
 
-        .post-categories {
-            list-style: none;
-            width: 140px;
-            margin: 0;
-            padding: 0;
+        &:last-of-type {
+            padding: 85px 0 100px 0;
+            border-bottom: none;
 
-            li {
-                margin-bottom: 5px;
-
-                a {
-                    display: block;
-                    padding: 5px 2px;
-                    color: #fff;
-                    background-color: #00d7ff;
-                    font-size: 1.4px;
-                    font-weight: 500;
-                    line-height: 1;
-                    text-align: center;
-                }
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
+            @include sp {
+                padding: 55px 0 70px 0;
             }
         }
     }
 
-    &__time {
-        width: 140px;
-        font-size: 16px;
-        line-height: 1.2;
-    }
+    &__content {}
 
-    &__link {
-        @include sp {
-            width: 100%;
-        }
+    &__info {
+        position: relative;
+        margin-bottom: 30px;
+        padding: 0px;
+
     }
 
     &__title {
-        flex: 1 1 0;
-        font-size: 16px;
+        width: 100%;
+        margin-bottom: 8px;
+        padding: 0;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        line-height: 1.25;
 
         @include sp {
-            flex: 1 1 100%;
+            font-size: 18px;
         }
     }
 
+    &__time {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        color: #81A9E3;
+        font-family: $font;
+
+        @include sp {
+            font-size: 18px;
+        }
+    }
+
+    &__desc {
+        margin-bottom: 20px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+    }
+
+    &__link {
+        display: block;
+        padding-bottom: 0px;
+
+        &:has(.c-post-news-list__link-wrap) {
+            padding-bottom: 55px;
+
+            @include sp {}
+        }
+    }
+
+    &__link-wrap {
+        position: relative;
+        padding: 0px 0 0 0;
+        background-color: #fff;
+        text-align: right;
+        z-index: 2;
+
+        a {
+            display: inline-block;
+            position: relative;
+            width: 150px;
+            padding: 8px 2px 10px 2px;
+            background-color: rgba($color: #81A9E3, $alpha: 0.1);
+            color: #81A9E3;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: 0.1em;
+            text-align: center;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 44%;
+                right: 20px;
+                width: 6px;
+                height: 6px;
+                border-top: 1px solid #81A9E3;
+                border-right: 1px solid #81A9E3;
+                transform: rotate(45deg);
+            }
+        }
+    }
 
 }

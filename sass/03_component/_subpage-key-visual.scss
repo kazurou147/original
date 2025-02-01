@@ -1,0 +1,79 @@
+@use "../01_foundation/variable"as *;
+
+/* 下層ページのキービジュアル */
+.c-subpage-kv {
+    position: relative;
+    // background-color: #EAEFF9;
+    padding: 0 50px;
+
+    @include tb {
+        padding: 0 20px;
+    }
+
+    @include sp {
+        padding: 0;
+    }
+
+    &__img {
+        position: relative;
+        width: 1500px;
+        max-width: 100%;
+        height: 275px;
+        margin-inline: auto;
+        background-size: cover;
+        background-position: center;
+        border-radius: 15px;
+        z-index: 778;
+
+        @include sp {
+            border-radius: 0px;
+            height: 150px;
+        }
+    }
+
+    &__heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        position: absolute;
+        inset: 0;
+        margin-inline: auto;
+        padding: 0px 0 0px 0;
+        text-align: center;
+        z-index: 2;
+        z-index: 779;
+    }
+
+    &__textBig {
+        position: relative;
+        margin-bottom: 18px;
+        font-size: 40px;
+        font-weight: 300;
+        letter-spacing: 8px;
+        text-align: center;
+        color: #304885;
+        line-height: 1.2;
+    }
+
+    &__textSmall {
+        display: block;
+        position: relative;
+        font-family: $font;
+        font-size: 25px;
+        font-weight: 500;
+        font-stretch: condensed;
+        text-align: center;
+        color: #c9d7f9;
+        line-height: 1;
+    }
+}
+
+.medical,
+.clinic,
+.s-treatment {
+    .c-subpage-kv {
+        background-color: #EAEFF9;
+    }
+}

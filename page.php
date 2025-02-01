@@ -11,11 +11,6 @@
     <!-- キービジュアル -->
     <?php get_template_part('template/page', 'kv'); ?>
 
-
-    <!-- パンくずリスト -->
-    <?php get_template_part('template/page', 'breadcrumbs'); ?>
-
-
     <!--　コンテンツ全体　-->
     <div class="l-page__content-outer">
       <div class="l-container">
@@ -27,7 +22,7 @@
           <?php if (have_posts()) :
             while (have_posts()) : the_post(); ?>
 
-          <?php the_content();  ?>
+              <?php the_content();  ?>
 
           <?php endwhile;
           endif; ?>

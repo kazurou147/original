@@ -8,13 +8,13 @@
   <!-- キービジュアル -->
   <?php get_template_part('template/page', 'kv'); ?>
 
-  <!-- パンくずリスト -->
-  <?php get_template_part('template/page', 'breadcrumb'); ?>
-
-
 
   <!--　コンテンツ全体　-->
-  <div class="l-container">
+  <div class="l-container-post">
+
+    <div class="c-blog-heading">
+      <h2 class="c-blog-heading__title"><?php the_title(); ?></h2>
+    </div>
 
     <!-- 2カラム -->
     <div class="l-blog__content">
@@ -31,29 +31,36 @@
           <article <?php post_class(); ?>>
 
             <?php if (have_posts()) :
-                  while (have_posts()) : the_post(); ?>
+              while (have_posts()) : the_post(); ?>
 
 
-            <!-- コンテンツ  -->
-
-
-            <?php get_template_part('template/post', 'single'); ?>
-
+                <!-- コンテンツ  -->
+                <?php get_template_part('template/post', 'single-news'); ?>
 
             <?php endwhile;
-                endif; ?>
+            endif; ?>
 
 
 
 
             <div class="l-single-pagenation">
-              <span class="l-single-pagenation__prev">
-                <?php previous_post_link('%link', '&lt;&nbsp;古い記事'); ?>
-              </span>
+              <div class="l-single-pagenation__prev">
 
-              <span class="l-single-pagenation__next">
-                <?php next_post_link('%link', '新しい記事&nbsp;&gt;'); ?>
-              </span>
+                <?php if (get_previous_post()) {
+                  previous_post_link('%link', '前へ');
+                } ?>
+
+              </div>
+
+              <div class="l-single-pagenation__center">
+                <a href="<?php echo esc_url(home_url('/news')); ?>">一覧に戻る</a>
+              </div>
+
+              <div class="l-single-pagenation__next">
+                <?php if (get_next_post()) {
+                  next_post_link('%link', '次へ');
+                } ?>
+              </div>
             </div>
 
           </article>
@@ -63,10 +70,7 @@
 
       </div><!-- /l-blog-post-wrap -->
 
-      <!-- サイドバー -->
-      <div class="l-sidebar">
-        <?php get_sidebar(); ?>
-      </div>
+
 
 
     </div><!-- /l-blog-cotent-row -->

@@ -1,0 +1,1724 @@
+@use "../01_foundation/variable"as *;
+
+/* --------------------------
+共通
+--------------------------- */
+.p-block01 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  &__img {
+    width: 50%;
+
+    @include sp {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+    width: calc(50% - 50px);
+
+    @include sp {
+      width: 100%;
+    }
+  }
+}
+
+
+.p-block02 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px 30px;
+
+  &__item {
+    width: 300px;
+    max-width: calc(33% - (30px * 2 / 3));
+    text-align: center;
+
+    @include sp {
+      max-width: 100%;
+      margin-inline: auto;
+    }
+  }
+
+
+  &__img {
+    margin-bottom: 20px;
+  }
+
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  &__text {
+    line-height: 1.88;
+    text-align: left;
+  }
+}
+
+.p-heading01 {
+  margin-bottom: 40px;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 2.5px;
+  text-align: center;
+  color: #031c5c;
+}
+
+.p-heading02 {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px 0 10px 52px;
+  background: url($sitePath + "/icon-heading02.png") no-repeat 0% 57%;
+  background-size: 33px auto;
+  font-size: 25px;
+  line-height: 1.6;
+  color: #031c5c;
+  border-bottom: 1px solid #5a70a5;
+
+
+  &__link {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    height: 30px;
+    padding: 8px 35px 6px 15px;
+    background: url($sitePath + "cosme/arrow-yellow.png") no-repeat calc(100% - 8px) 8px;
+    background-size: 13px;
+    background-color: #eec51e;
+    line-height: 1;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+
+    @include sp {
+      padding: 8px 25px 6px 10px;
+      right: 0px;
+    }
+  }
+}
+
+.p-heading03 {
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #031c5c;
+}
+
+
+.p-sub-heading01 {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.94;
+  color: #284674;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background-color: #284674;
+  }
+}
+
+.p-sub-heading02 {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 5px 0 5px 30px;
+  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", serif;
+  ;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.59;
+  text-align: left;
+  color: #2d2d2d;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 12px;
+    height: 35px;
+    background-color: #284674;
+  }
+}
+
+.p-sub-heading03 {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.94;
+  color: #284674;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    background-color: #81a9e3;
+  }
+}
+
+.p-sub-heading04 {
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 2.4px;
+  color: #81a9e3;
+}
+
+
+.p-block03 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: #fff;
+  margin-bottom: 30px;
+
+  &--blue {
+    background-color: #f5f7fb;
+  }
+
+  &__img {
+    width: 260px;
+
+    @include sp {
+      width: 540px;
+      max-width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    width: calc(100% - 260px);
+    padding: 35px 40px 10px 40px;
+
+    @include tb {
+      padding: 25px 30px 10px 40px;
+    }
+
+    @include sp {
+      width: 100%;
+      padding: 25px 20px 20px 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.94;
+    color: #2d2d2d;
+
+    @include tb {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 2;
+    color: #2d2d2d;
+  }
+}
+
+.p-list01 {
+  padding: 38px 46px 44px 44px;
+  background-color: #fff;
+
+  li {
+    color: #2d2d2d;
+  }
+}
+
+.p-list02 {
+  padding: 20px 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  border: solid 5px #dbe9ff;
+
+  &__inner {
+    width: 540px;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    padding: 20px 0 0 0;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.75;
+    text-align: center;
+    color: #81a9e3;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      position: relative;
+      padding-left: 37px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 0px;
+        width: 23px;
+        height: 21px;
+        background: url($sitePath + "icon_check02.png") no-repeat 0% 0;
+        background-size: cover;
+      }
+    }
+  }
+
+  li {
+    color: #2d2d2d;
+  }
+}
+
+.p-list03 {
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    padding: 0 10px 0 30px;
+  }
+
+  dt {
+    width: 150px;
+    height: 40px;
+    padding: 9px 10px 8px 12px;
+    border-radius: 20px;
+    background-color: #5b70a5;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+  }
+
+  dd {
+    flex: 1;
+    padding-left: 30px;
+  }
+
+  &--pt2 {
+    dt {
+      width: 270px;
+    }
+  }
+}
+
+.p-ol01 {
+  &__item {
+    display: flex;
+  }
+
+  &__no {
+    position: relative;
+    width: 70px;
+    background-color: #fff;
+    z-index: 2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: auto 0 0 0;
+      width: 1px;
+      height: 100%;
+      margin: auto;
+      background-color: #81a9e2;
+      z-index: -1;
+    }
+
+    &--last {
+      &::before {
+        display: none;
+      }
+    }
+
+    &>p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 100px;
+      background-color: #8ba3dd;
+      color: #fff;
+      text-align: center;
+      font-size: 28px;
+      font-family: $font3;
+      padding-top: 6px;
+    }
+  }
+
+  &__content {
+    margin-bottom: 60px;
+    padding: 0 0 0 34px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+}
+
+
+.p-block-bgwhite01 {
+  padding: 40px;
+  background-color: #fff;
+
+  @include sp {
+    padding: 20px;
+  }
+}
+
+.p-block-blue01 {
+  padding: 30px;
+  border: solid 2px #81a9e2;
+  background-color: #fff;
+
+  @include sp {
+    padding: 20px;
+  }
+}
+
+
+.p-block04 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 45px;
+
+  @include tb {
+    padding: 45px 20px;
+  }
+
+  @include sp {
+    padding: 40px 0px;
+  }
+
+  &__head {
+    width: 330px;
+
+    @include sp {
+      width: 100%;
+    }
+  }
+
+  &__body {
+    width: calc(100% - 330px);
+
+    @include sp {
+      width: 100%;
+    }
+  }
+
+  &+.p-block04 {
+    border-top: 1px solid #cdd5e3;
+    ;
+  }
+}
+
+
+.p-block05 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0 0 0 100px;
+  background-color: #f5f7fb;
+
+  @include tb {
+    padding: 0 0 0 50px;
+  }
+
+  @include tb {
+    padding: 0 0 0 0px;
+  }
+
+  &__content {
+    width: calc(100% - 250px);
+    padding: 30px 50px 20px 0;
+
+    @include sp {
+      width: 100%;
+      order: 2;
+      padding: 30px 20px 20px 20px;
+    }
+  }
+
+  &__img {
+    width: 250px;
+
+    @include sp {
+      width: 100%;
+      order: 1;
+    }
+  }
+}
+
+
+.p-block06 {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0 100px 0 100px;
+
+  @include tb {
+    padding: 0 50px 0 50px;
+  }
+
+  @include sp {
+    padding: 0 20px 0 20px;
+  }
+
+  &--blue {
+    background-color: #f5f7fb;
+  }
+
+  &__head {
+    width: 300px;
+    padding: 30px 0px 30px 0;
+
+    @include sp {
+      width: 100%;
+      padding: 30px 0px 0px 0;
+    }
+  }
+
+  &__body {
+    width: calc(100% - 300px);
+    padding: 30px 0px 30px 0;
+
+    @include sp {
+      width: 100%;
+      padding: 0px 0px 30px 0;
+
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+}
+
+
+.p-block07 {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 50px 100px 30px 100px;
+  gap: 30px 70px;
+  background-color: rgba($color: #284674, $alpha: 0.08);
+
+  @include tb {
+    justify-content: center;
+    padding: 50px 50px 30px 50px;
+  }
+
+  &__item {}
+}
+
+
+.p-block08 {
+  padding: 0 0 0 100px;
+  background-color: #f5f7fb;
+
+  @include tb {
+    padding: 0 0 0 50px;
+  }
+
+  @include sp {
+    padding: 0 0 0 0px;
+  }
+
+  &__area01 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+  }
+
+  &__content {
+    width: calc(100% - 250px);
+    padding: 30px 50px 20px 0;
+
+    @include sp {
+      width: 100%;
+      padding: 30px 20px 0px 20px;
+      order: 2;
+    }
+  }
+
+  &__img {
+    width: 250px;
+
+    @include sp {
+      width: 100%;
+      order: 1;
+    }
+  }
+
+  &__area02 {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-right: 100px;
+    border-top: 1px dotted #284674;
+
+    @include tb {
+      margin-right: 50px;
+    }
+
+    @include sp {
+      margin-right: 0px;
+    }
+  }
+
+  &__head {
+    width: 300px;
+    padding: 30px 0px 30px 0;
+
+    @include sp {
+      width: 100%;
+      padding: 30px 20px 0px 20px;
+    }
+  }
+
+  &__body {
+    width: calc(100% - 300px);
+    padding: 30px 0px 30px 0;
+
+    @include sp {
+      width: 100%;
+      padding: 0px 20px 30px 20px;
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+}
+
+
+.p-medical-list01 {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 30px 0 0;
+  gap: 20px;
+
+  @include sp {
+    padding: 0;
+  }
+
+
+  &>li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(25% - (20px * 3 / 4));
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ebf3fe;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+
+    @include sp {
+      width: calc(50% - (20px * 1 / 2));
+    }
+  }
+
+  &--white {
+    &>li {
+      background-color: #fff;
+    }
+  }
+
+}
+
+
+.p-medical-frame01 {
+  position: relative;
+  padding: 90px 30px 60px 60px;
+  border-radius: 30px;
+  border: solid 5px #5a70a5;
+
+  @include tb {
+    padding: 90px 15px 60px 35px;
+  }
+
+  @include sp {
+    padding: 59px 15px 24px 25px;
+  }
+
+  &--pt01 {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -65px;
+      right: 30px;
+      width: 344px;
+      height: 182px;
+      background: url($sitePath + "medical/frame01.png") no-repeat 50% 50%;
+      background-size: cover;
+      z-index: 2;
+
+      @include sp {
+        display: none;
+      }
+    }
+  }
+
+  &--pt02 {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -65px;
+      right: 30px;
+      width: 312px;
+      height: 183px;
+      background: url($sitePath + "medical/frame02.png") no-repeat 50% 50%;
+      background-size: cover;
+      z-index: 2;
+
+      @include sp {
+        display: none;
+      }
+    }
+  }
+
+  &--pt03 {
+    padding: 90px 20px 60px 42px;
+  }
+
+  &__title {
+    position: absolute;
+    inset: -30px 0 0 0;
+    width: 630px;
+    max-width: 100%;
+    height: 60px;
+    margin: 0 auto 0 auto;
+    padding: 16px 60px 19px;
+    border-radius: 10px;
+    background-color: #5b70a5;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.2em;
+    text-align: center;
+    color: #fff;
+
+    @include sp {
+      padding: 7px 10px 5px;
+      font-size: 16px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+
+    li {
+      width: 33.3%;
+      margin-bottom: 20px;
+      padding: 0 15px 0 26px;
+      background: url($sitePath + "icon_check02.png") no-repeat 0% calc(50% - 2px);
+      background-size: 15px auto;
+      font-weight: bold;
+      color: #000;
+
+      @include tb {
+        width: 50%;
+      }
+
+      @include sp {
+        width: 100%;
+      }
+    }
+  }
+
+  &__text01 {
+    position: relative;
+    padding: 0 0 0 70px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2.8;
+    letter-spacing: 0.1em;
+
+    @include sp {
+      padding: 0 0 0 42px;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-right: 30px;
+      background-color: #2e7ab2;
+      border-radius: 50px;
+      text-align: center;
+      padding-top: 11px;
+      line-height: 1;
+      color: #fff;
+      font-family: $font4;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 0;
+
+      @include sp {
+        top: 6px;
+        width: 30px;
+        height: 30px;
+        margin-right: 15px;
+        padding-top: 7px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
+.p-medical-frame02 {
+  position: relative;
+  padding: 90px 0px 60px 140px;
+  border-radius: 30px;
+  border: solid 5px #5a70a5;
+
+  &--pt2 {
+    padding: 90px 0px 60px 70px;
+  }
+
+  @include tb {
+    padding: 90px 15px 60px 35px;
+  }
+
+  @include sp {
+    padding: 59px 15px 24px 25px;
+  }
+
+  &__title {
+    position: absolute;
+    inset: -30px 0 0 0;
+    width: 500px;
+    max-width: 90%;
+    height: 60px;
+    margin: 0 auto 0 auto;
+    padding: 16px 60px 18px;
+    border-radius: 10px;
+    background-color: #5b70a5;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.2em;
+    text-align: center;
+    color: #fff;
+
+    @include sp {
+      max-width: 100%;
+      padding: 18px 50px 18px;
+      font-size: 16px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 10px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+
+    li {
+      width: 40%;
+      margin-bottom: 20px;
+      padding: 0 15px 0 26px;
+      background: url($sitePath + "icon_check02.png") no-repeat 0% calc(50% - 2px);
+      background-size: 15px auto;
+
+      @include tb {
+        width: 48%;
+      }
+
+      @include sp {
+        width: 100%;
+      }
+    }
+
+    &--pt2 {
+      li {
+        width: 48%;
+
+        @include sp {
+          width: 100%;
+        }
+      }
+
+    }
+  }
+
+  &__text01 {
+    position: relative;
+    padding: 0 0 0 70px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2.8;
+    letter-spacing: 0.1em;
+
+    @include sp {
+      padding: 0 0 0 42px;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-right: 30px;
+      background-color: #2e7ab2;
+      border-radius: 50px;
+      text-align: center;
+      padding-top: 11px;
+      line-height: 1;
+      color: #fff;
+      font-family: $font4;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 0;
+
+      @include sp {
+        top: 6px;
+        width: 30px;
+        height: 30px;
+        margin-right: 15px;
+        padding-top: 7px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
+
+
+
+/* --------------------------
+診療案内
+--------------------------- */
+.p-medical {
+  color: #031C5C;
+}
+
+.p-medical-sec01 {
+  padding: 130px 0 130px 0;
+
+  @include sp {
+    padding: 80px 0 80px 0;
+  }
+}
+
+
+/* 外科手術 */
+.p-medical-sec02 {
+  position: relative;
+  padding: 110px 0 90px 0;
+  background-color: #f5f6fb;
+
+}
+
+.p-medical-treatment-block01 {
+  @include sp {
+    figure {
+      img {
+        @include sp {
+          position: relative;
+          left: -50px;
+          width: 110%;
+          max-width: 110%;
+        }
+      }
+    }
+  }
+}
+
+.p-medical-treatment-block02 {
+  position: relative;
+  z-index: 2;
+  min-height: 524px;
+  padding-top: 65px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 166px;
+    left: 129px;
+    width: 186px;
+    height: 379px;
+    background: url($sitePath + "/medical/sec02-illust01.png") no-repeat 50% 50%;
+    background-size: cover;
+
+    @include tb {
+      display: none;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 55px;
+    padding-left: 0px;
+    font-family: $font;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #2e7ab2;
+    z-index: 2;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+}
+
+
+/* 予防医療 */
+.p-medical-sec03 {
+  position: relative;
+  padding: 150px 0 90px 0;
+
+  @include sp {
+    padding: 90px 0 90px 0;
+  }
+}
+
+
+.p-medical-subheading01 {
+  margin-bottom: 15px;
+  padding: 14px 0 2px 70px;
+  background: url($sitePath + "medical/icon-cat.png") no-repeat 0% 40%;
+  background-size: 48px auto;
+  font-size: 22px;
+  line-height: 1.82;
+}
+
+
+.p-medical-subheading02 {
+  margin-bottom: 15px;
+  padding: 14px 0 2px 70px;
+  background: url($sitePath + "medical/icon-dog.png") no-repeat 0% 65%;
+  background-size: 52px auto;
+  font-size: 22px;
+  line-height: 1.82;
+}
+
+.p-table01 {
+  border: none;
+  width: 100%;
+
+  @include sp {
+    tr:first-of-type {
+      position: relative;
+      top: 2px;
+    }
+  }
+
+
+  th {
+    width: 240px;
+    padding: 30px 10px;
+    border: solid 1px #304885;
+    text-align: center;
+    background-color: #ebf3fe;
+
+    @include sp {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  td {
+    padding: 30px 35px;
+    border: solid 1px #304885;
+
+    @include sp {
+      display: block;
+      position: relative;
+      top: -1px;
+      width: 100%;
+    }
+  }
+}
+
+
+
+.p-medical-sec03 {
+  position: relative;
+  padding: 150px 0 90px 0;
+
+  @include sp {
+    padding: 90px 0 90px 0;
+  }
+}
+
+.p-medical-sec04 {
+  position: relative;
+  padding: 150px 0 130px 0;
+  background-color: #f5f6fb;
+
+  @include sp {
+    padding: 90px 0 90px 0;
+  }
+}
+
+.p-medical-sec05 {
+  position: relative;
+  padding: 150px 0 130px 0;
+
+  @include sp {
+    padding: 90px 0 90px 0;
+  }
+}
+
+.p-medical-sec06 {
+  position: relative;
+  padding: 110px 0 130px 0;
+  background-color: #f5f6fb;
+
+  @include sp {
+    padding: 90px 0 90px 0;
+  }
+}
+
+.p-medical-sec06-block01 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+}
+
+.p-medical-sec07 {
+  position: relative;
+  padding: 110px 0 130px 0;
+}
+
+.p-medical-sec07-block01 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px 100px;
+}
+
+.p-medical-sec08 {
+  position: relative;
+  padding: 110px 0 130px 0;
+  background-color: #f5f6fb;
+}
+
+
+.p-medical-sec09 {
+  position: relative;
+  padding: 110px 0 130px 0;
+}
+
+.p-medical-sec10 {
+  position: relative;
+  padding: 110px 0 130px 0;
+  background-color: #f5f6fb;
+}
+
+
+
+
+
+
+
+
+/* --------------------------
+医院紹介
+--------------------------- */
+.p-clinic {
+  color: #031c5c;
+}
+
+.p-clinic-sec01 {
+  padding: 120px 0 170px 0;
+
+  @include sp {
+    padding: 90px 0 110px 0;
+  }
+}
+
+.p-clinic-sec01-block01 {
+  width: 820px;
+  max-width: 100%;
+  margin-inline: auto;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+
+  @include sp {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+
+
+/* 医師紹介 */
+.p-clinic-doctors {
+  position: relative;
+  padding: 120px 0 150px 0;
+  background-color: rgba($color: #f5f6fb, $alpha: 0.8);
+
+  @include sp {
+    padding: 90px 0 100px 0;
+    overflow: hidden;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0px 0 auto 0;
+    width: 100%;
+    height: 90px;
+    margin: auto;
+    background: url($sitePath + "hr01.png") no-repeat 50% 50%;
+    background-size: 3500px auto;
+    z-index: 2;
+  }
+}
+
+.p-clinic-doctors-block01 {
+  @include sp {
+    padding-top: 0px;
+    margin: 0 -25px;
+  }
+
+  &--rev {
+    flex-direction: row-reverse;
+  }
+
+  &__left {
+    position: relative;
+    width: 518px;
+    max-width: 47%;
+    overflow: hidden;
+
+    img {
+      border-radius: 15px;
+    }
+
+    @include sp {
+      max-width: 100%;
+      margin: 0 auto 0px auto;
+
+      img {
+        width: 140%;
+        max-width: 140%;
+        height: 140%;
+        position: relative;
+        left: -20%;
+        object-fit: cover;
+        object-position: center;
+
+      }
+    }
+  }
+
+
+  &__right {
+    width: 50%;
+
+    @include sp {
+      width: 100%;
+      padding: 0 25px;
+    }
+  }
+
+  &__lead {
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.47em;
+    color: #5b70a5;
+  }
+
+  &__name {
+    font-size: 35px;
+    letter-spacing: 0.25em;
+    text-align: left;
+    color: #031c5c;
+    font-weight: 400;
+
+    @include sp {
+      font-size: 26px;
+    }
+  }
+
+  &__name-en {
+    font-family: $font;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: left;
+    color: #8ba3dd;
+    line-height: 1.8;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    color: #81a9e3;
+    line-height: 1.6;
+
+    &--black {
+      color: #000;
+    }
+  }
+
+
+  &__text {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2.13;
+    color: #474747;
+  }
+
+
+  &__career {
+    position: relative;
+    padding: 0 0 5px 21px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", serif;
+    border-bottom: 1px solid #707070;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background: url($sitePath + "icon-heading03.png") no-repeat 50% 50%;
+      background-size: cover;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 2.15;
+    letter-spacing: 1.3px;
+    color: #474747;
+  }
+}
+
+
+
+/* 院内紹介 */
+.p-clinic-intro {
+  position: relative;
+  padding: 120px 0 160px 0;
+  background-color: #fff;
+
+  @include sp {
+    padding: 90px 0 110px 0;
+  }
+}
+
+.p-clinic-intro-block01 {
+  gap: 70px 60px;
+
+  @include tb {
+    gap: 70px 30px;
+  }
+
+  &__item {
+    width: calc(50% - (60px * 1 / 2));
+    text-align: center;
+
+    @include sp {
+      width: 100%;
+    }
+  }
+
+  &__img {}
+
+  &__title {
+    margin-bottom: 25px;
+    padding: 25px 0 0px 0;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.6;
+
+    @include sp {
+      font-size: 20px;
+      margin-bottom: 15px;
+      padding: 30px 0 0px 0;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 2.14;
+    text-align: left;
+    color: #383838;
+  }
+}
+
+
+.p-clinic-intro-block02 {
+  width: 850px;
+  max-width: 100%;
+  margin-inline: auto;
+  padding: 30px 60px 40px 60px;
+  border-radius: 15px;
+  border: solid 2px #5a70a5;
+
+  @include sp {
+    padding: 30px 20px 40px 20px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+
+/* アクセス */
+.p-clinic-access {
+  padding: 150px 0 190px 0;
+  background-color: #fff;
+  background-color: #f5f6fb;
+
+  @include sp {
+    padding: 100px 0 100px 0;
+  }
+
+  &__inner {
+    width: 840px;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  &__address {
+    width: 340px;
+    max-width: 100%;
+    margin-inline: auto;
+    padding-left: 30px;
+    background: url($sitePath + "icon-address.png") no-repeat 0% 50%;
+    background-size: 15px auto;
+    font-size: 16px;
+    line-height: 1.56;
+
+    @include sp {
+      padding: 34px 0 0 0;
+      background: url($sitePath + "clinic/icon-address.png") no-repeat 50% 0%;
+      background-size: 15px auto;
+      font-size: 14px;
+    }
+  }
+
+  &__btn-lead {
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.75;
+    text-align: center;
+    color: #284674;
+  }
+
+  &__btn {
+    width: 445px;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+}
+
+.p-clinic-access-block01 {
+  &__map-gmap {
+    margin-bottom: 45px;
+
+    iframe {
+      width: 100%;
+      border-radius: 25px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 24px;
+    padding: 0 0 7px 0px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: #254bac;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 0 0;
+      width: 500px;
+      max-width: 100%;
+      height: 1px;
+      margin-inline: auto;
+      background-color: #cfcfcf;
+    }
+  }
+
+  &__list {
+    padding-left: 0px;
+    list-style: none;
+    text-align: center;
+
+    @include sp {
+      text-align: left;
+    }
+
+    li {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #000;
+    }
+  }
+
+  &__youtube-caption {
+    margin-bottom: 35px;
+    text-align: center;
+
+    @include sp {
+      text-align: left;
+      line-height: 1.75;
+    }
+  }
+
+  &__youtube {
+    iframe {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      aspect-ratio: 16 / 9;
+      border-radius: 20px;
+    }
+  }
+
+
+
+
+  &__right {
+    width: 690px;
+    max-width: calc(100% - 440px - 10px);
+
+    @include tb {
+      max-width: 100%;
+      margin-inline: auto;
+    }
+  }
+
+
+}
+
+
+
+
+/* 料金表
+--------------------------- */
+.p-price-sec01 {
+  padding: 135px 0 220px 0;
+}
+
+.p-price-memo01 {
+  margin-bottom: 15px;
+  text-align: right;
+  color: #031c5c;
+}
+
+.p-price-memo02 {
+  margin-top: 15px;
+  color: #031c5c;
+}
+
+.p-price-subtitle01 {
+  margin-bottom: 45px;
+  padding: 12px 10px 12px 30px;
+  background-color: #254bac;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #fff;
+
+  @include sp {
+    padding: 12px 10px 12px 18px;
+    font-size: 22px;
+  }
+}
+
+.p-price-dl01 {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #C8CED7;
+
+    &:first-of-type {
+      border-top: 1px solid #C8CED7;
+    }
+  }
+
+  dt {
+    position: relative;
+    width: calc(100% - 233px);
+    padding: 10px 10px 10px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.94;
+
+    @include sp {
+      width: 100%;
+      padding: 10px 10px 0px 10px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      right: 0;
+      width: 1px;
+      height: calc(100% - 20px);
+      background-color: #C8CED7;
+
+      @include sp {
+        display: none;
+      }
+    }
+  }
+
+  dd {
+    width: 233px;
+    padding: 10px 30px 10px 10px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.94;
+
+    @include sp {
+      width: 100%;
+      padding: 0px 10px 10px 10px;
+    }
+  }
+
+  &__row01 {
+    display: inline-block;
+    width: 400px;
+    max-width: 100%;
+
+    @include sp {
+      display: inline;
+      padding-right: 20px;
+    }
+  }
+
+  &__text-pt2 {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+
+/* 外科診療
+--------------------------- */
+.p-treat {
+  color: #031c5c;
+}
+
+.p-treat-sec01 {
+  padding: 120px 0 130px 0;
+}
+
+.p-treat-sec02 {
+  padding: 120px 0 130px 0;
+  background-color: #f5f6fb;
+}
+
+.p-treat-sec03 {
+  padding: 120px 0 130px 0;
+}
+
+.p-treat-sec04 {
+  padding: 120px 0 200px 0;
+}

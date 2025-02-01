@@ -1,11 +1,9 @@
 @use "../01_foundation/variable"as *;
 
 /* page */
+/* 今回はブログ記事も同じ設定にする */
 .l-page {
   &__content-outer {
-    margin-bottom: 50px;
+    // margin-bottom: 150px;
   }
 }
-
-
-/* キービジュアル */
